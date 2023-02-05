@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422d23073359f429694c0a4e47f2d51a, type: 3}
+  m_Name: Level 1
+  m_EditorClassIdentifier: 
+  initialActiveSmiles:
+  - {fileID: 11400000, guid: 392d7778c8069496385d2ad520cf5349, type: 2}
+  initialStoredSlimes:
+  - {fileID: 11400000, guid: 183178127b70c453c93182a99a646819, type: 2}
+  - {fileID: 11400000, guid: 1ce657bfa558a4b35b5c8d1fe7cb6d83, type: 2}
+  - {fileID: 11400000, guid: 9c753fc691648427ab4db2b4a7de69d2, type: 2}
+  conditions:
+  - {fileID: 11400000, guid: b98df4c131d50407e99780dba8d758bc, type: 2}
+  interactionObjects:
+  - {fileID: 7432132347183600712, guid: 03781e7ba9c974a50b77e977f49e7bb0, type: 3}
+  - {fileID: 6371193984893785802, guid: 7d857576cd3bb4e93b98b7868df54602, type: 3}
+  - {fileID: 2830383328213450121, guid: 33cecc2294ef14093afbb101cb94b12c, type: 3}
+  - {fileID: 2830383328213450121, guid: 33cecc2294ef14093afbb101cb94b12c, type: 3}
+  levelText: Make a sample as big as you can
+  pythonHint: Hint about python
+  tablesHint: Hint about tables
+  theoryText: blab blab bla
