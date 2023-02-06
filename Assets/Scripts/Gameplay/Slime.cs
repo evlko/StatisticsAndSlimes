@@ -10,11 +10,12 @@ namespace Gameplay
         private SlimeData _slimeData;
         private SlimePool _slimePool;
         private SpriteRenderer _spriteRenderer;
-        private Vector2 _savedPosition;
+        private Dragging _dragging;
 
         public SlimeData SlimeData => _slimeData;
 
         public static Action<SlimeData> ShowSlimeData;
+        public static Action HideSlimeData;
         public static Action SlimeFeatureChanged;
 
         public void Init(SlimeData slimeData, SlimePool slimePool)
@@ -28,19 +29,19 @@ namespace Gameplay
         private void Awake()
         {
             _spriteRenderer = this.GetComponent<SpriteRenderer>();
-            this.gameObject.AddComponent<Dragging>();
+            _dragging = this.gameObject.AddComponent<Dragging>();
         }
 
-        private void OnMouseDown()
+        private void OnMouseEnter()
         {
-            _savedPosition = this.transform.position;
+            ShowSlimeData?.Invoke(_slimeData);
         }
 
-        private void OnMouseUp()
+        private void OnMouseExit()
         {
-            if (Vector2.Distance(this.transform.position, _savedPosition) < 0.5f)
+            if (!_dragging.isDragging)
             {
-                ShowData();
+                HideSlimeData?.Invoke();
             }
         }
 
@@ -60,11 +61,6 @@ namespace Gameplay
         public void Destroy()
         {
             _slimePool.RemoveSlime(this);
-        }
-
-        private void ShowData()
-        {
-            ShowSlimeData?.Invoke(_slimeData);
         }
 
         private void RegisterStats()
