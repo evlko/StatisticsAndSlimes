@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Models;
 
 namespace Gameplay
@@ -14,6 +13,8 @@ namespace Gameplay
         private int _currentLevel;
 
         public static Action<LevelData> ShowLevelData;
+        public static Action LevelCompleted;
+        
         private void Awake()
         {
             if (!PlayerPrefs.HasKey("Level"))
@@ -44,8 +45,7 @@ namespace Gameplay
                 Slime.SlimeFeatureChanged -= CheckConditions;
                 _currentLevel += 1;
                 PlayerPrefs.SetInt("Level", _currentLevel);
-                Debug.Log("Level completed!");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                LevelCompleted?.Invoke();
             };
         }
     }

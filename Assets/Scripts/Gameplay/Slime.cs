@@ -10,8 +10,11 @@ namespace Gameplay
         private SlimeData _slimeData;
         private SlimePool _slimePool;
         private SpriteRenderer _spriteRenderer;
+        private Animator _animator;
         private Dragging _dragging;
-
+        
+        private static readonly int IsJumping = Animator.StringToHash("isJumping");
+        
         public SlimeData SlimeData => _slimeData;
 
         public static Action<SlimeData> ShowSlimeData;
@@ -28,8 +31,16 @@ namespace Gameplay
 
         private void Awake()
         {
-            _spriteRenderer = this.GetComponent<SpriteRenderer>();
+            _spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
+            _animator = this.GetComponentInChildren<Animator>();
             _dragging = this.gameObject.AddComponent<Dragging>();
+
+            LevelManager.LevelCompleted += Jump;
+        }
+
+        private void Jump()
+        {
+            _animator.SetBool(IsJumping, true);
         }
 
         private void OnMouseEnter()
