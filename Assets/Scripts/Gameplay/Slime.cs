@@ -40,7 +40,8 @@ namespace Gameplay
 
         private void Jump()
         {
-            _animator.SetBool(IsJumping, true);
+            if (_animator != null)
+                _animator.SetBool(IsJumping, true);
         }
 
         private void OnMouseEnter()

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Gameplay;
 using Localization;
-using TMPro;
 using UnityEngine;
 using Models;
 

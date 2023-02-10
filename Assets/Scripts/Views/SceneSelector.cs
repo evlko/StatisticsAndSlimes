@@ -19,6 +19,7 @@ namespace Views
         
         public void ReloadScene()
         {
+            this.gameObject.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
