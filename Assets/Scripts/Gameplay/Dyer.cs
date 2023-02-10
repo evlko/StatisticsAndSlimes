@@ -5,11 +5,20 @@ namespace Gameplay
 {
     public class Dyer : InteractionObject
     {
-        [SerializeField] private Color color;
+        [SerializeField] private ColorsStorage.ColorNames color;
+        private Color _color;
+        private SpriteRenderer _spriteRenderer;
 
+        private void Awake()
+        {
+            _spriteRenderer = this.GetComponent<SpriteRenderer>();
+            _color = ColorsStorage.ColorMap[color.ToString()];
+            _spriteRenderer.color = _color;
+        }
+        
         protected override void Interact(Transform t)
         {
-            t.GetComponent<IColorable>()?.Color(color);
+            t.GetComponent<IColorable>()?.Color(_color);
         }
     }
 }

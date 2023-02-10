@@ -25,7 +25,7 @@ namespace Gameplay
         {
             _slimeData = slimeData;
             _slimePool = slimePool;
-            Color(_slimeData.color);
+            Color(ColorsStorage.ColorMap[_slimeData.color.ToString()]);
             RegisterStats();
         }
 

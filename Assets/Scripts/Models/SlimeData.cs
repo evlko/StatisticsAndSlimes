@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gameplay;
 using UnityEngine;
 
 namespace Models
@@ -8,7 +9,7 @@ namespace Models
     {
         [Header("Categorical Features")]
         public string slimeName;
-        public Color color;
+        public ColorsStorage.ColorNames color;
         [Header("Quantitative Features")]
         public float happiness;
         public float slipperiness;
