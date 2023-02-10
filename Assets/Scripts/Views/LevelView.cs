@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Gameplay;
+using Localization;
 using TMPro;
 using UnityEngine;
 using Models;
@@ -7,10 +9,7 @@ namespace Views
 {
     public class LevelView : View
     {
-        [SerializeField] private TextMeshProUGUI mainText;
-        [SerializeField] private TextMeshProUGUI pythonHintText;
-        [SerializeField] private TextMeshProUGUI tablesHintText;
-        [SerializeField] private TextMeshProUGUI theoryText;
+        [SerializeField] private List<LocalizedText> levelTexts;
 
         private void Awake()
         {
@@ -19,10 +18,10 @@ namespace Views
 
         private void ShowLevelView(LevelData levelData)
         {
-            mainText.text = levelData.levelText;
-            pythonHintText.text = levelData.pythonHint;
-            tablesHintText.text = levelData.tablesHint;
-            theoryText.text = levelData.theoryText;
+            foreach (var levelText in levelTexts)
+            {
+                levelText.LocalizationKey = levelData.levelKey;
+            }
         }
     }
 }

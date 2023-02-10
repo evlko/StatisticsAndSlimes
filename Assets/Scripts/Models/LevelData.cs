@@ -7,6 +7,9 @@ namespace Models
     [CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/Level", order = 2)]
     public class LevelData : ScriptableObject
     {
+        [Header("Level Key")]
+        public string levelKey;
+        
         [Header("Data")]
         public List<SlimeData> initialActiveSmiles;
         public List<SlimeData> initialStoredSlimes;
@@ -14,11 +17,5 @@ namespace Models
 
         [Header("Objects")] 
         public List<InteractionObject> interactionObjects;
-        
-        [Header("Texts")]
-        public string levelText;
-        public string pythonHint;
-        public string tablesHint;
-        public string theoryText;
     }
 }

@@ -1,0 +1,30 @@
+{
+    "LevelTask": {
+        "level_1": "t_value",
+        "level_2": "t_value",
+        "level_3": "t_value",
+        "level_4": "t_value",
+        "level_5": "t_value"
+    },
+    "LevelTheory": {
+        "level_1": "t_value",
+        "level_2": "t_value",
+        "level_3": "t_value",
+        "level_4": "t_value",
+        "level_5": "t_value"
+    },
+    "PythonHint": {
+        "level_1": "t_value",
+        "level_2": "t_value",
+        "level_3": "t_value",
+        "level_4": "t_value",
+        "level_5": "t_value"
+    },
+    "TableHint": {
+        "level_1": "t_value",
+        "level_2": "t_value",
+        "level_3": "t_value",
+        "level_4": "t_value",
+        "level_5": "t_value"
+    }
+}
