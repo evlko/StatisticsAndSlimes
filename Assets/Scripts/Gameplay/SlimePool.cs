@@ -8,8 +8,7 @@ namespace Gameplay
     public class SlimePool : MonoBehaviour
     {
         [Header("Slimes")]
-        // TODO: rename this property -> slime
-        [SerializeField] private Slime slimeView;
+        [SerializeField] private Slime slime;
         [SerializeField] private Transform slimePoolPosition;
 
         [Header("Spawn")]
@@ -18,13 +17,11 @@ namespace Gameplay
         
         private static List<Slime> _storedSlimes = new List<Slime>();
         private static List<Slime> _activeSlimes = new List<Slime>();
-        private readonly System.Random _random = new System.Random();
-        
+
         public static Action SlimesPoolChanged;
 
         public static List<Slime> ActiveSlimes => _activeSlimes;
-
-        // TODO: duplicates are not fun :(
+        
         public void BuildPool(List<SlimeData> storedSlimes, List<SlimeData> activeSlimes)
         {
             Debug.Log("Building pool...");
@@ -32,32 +29,34 @@ namespace Gameplay
             _storedSlimes.Clear();
             _activeSlimes.Clear();
             
-            foreach (var t in storedSlimes)
+            foreach (var slimeData in storedSlimes)
             {
-                var slime = Instantiate(slimeView, slimePoolPosition.position, Quaternion.identity);
-                slime.Init(t, this);
-                slime.transform.parent = this.transform;
-                _storedSlimes.Add(slime);
+                var instantiatedSlime = InstantiateSlime(slimeData);
+                _storedSlimes.Add(instantiatedSlime);
             }
 
-            foreach (var t in activeSlimes)
+            foreach (var slimeData in activeSlimes)
             {
-                var slime = Instantiate(slimeView, slimePoolPosition.position, Quaternion.identity);
-                slime.Init(t, this);
-                slime.transform.parent = this.transform;
-                ActivateSlime(slime);
+                var instantiatedSlime = InstantiateSlime(slimeData);
+                ActivateSlime(instantiatedSlime);
             }
+        }
+
+        private Slime InstantiateSlime(SlimeData slimeData)
+        {
+            var instantiatedSlime = Instantiate(this.slime, slimePoolPosition.position, Quaternion.identity);
+            instantiatedSlime.Init(slimeData, this);
+            instantiatedSlime.transform.parent = this.transform;
+
+            return instantiatedSlime;
         }
 
         public void ActivateSlime(Slime pickedSlime = null)
         {
-            Debug.Log("Activate slime...");
-
             if (pickedSlime == null)
             {
                 if (_storedSlimes.Count <= 0) return;
-                var slimeIndex = 0;
-                pickedSlime = _storedSlimes[slimeIndex];
+                pickedSlime = _storedSlimes[0];
             }
 
             if (_storedSlimes.Contains(pickedSlime))
@@ -73,11 +72,11 @@ namespace Gameplay
             SlimesPoolChanged?.Invoke();
         }
 
-        public void RemoveSlime(Slime slime)
+        public void RemoveSlime(Slime s)
         {
-            _activeSlimes.Remove(slime);
-            _storedSlimes.Add(slime);
-            slime.transform.position = slimePoolPosition.position;
+            _activeSlimes.Remove(s);
+            _storedSlimes.Add(s);
+            s.transform.position = slimePoolPosition.position;
             
             SlimesPoolChanged?.Invoke();
         }
