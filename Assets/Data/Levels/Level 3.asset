@@ -21,4 +21,6 @@ MonoBehaviour:
   initialStoredSlimes: []
   conditions:
   - {fileID: 11400000, guid: d6e9e6ee0be9f45809d428b2fb07985b, type: 2}
-  interactionObjects: []
+  interactionObjects:
+  - {fileID: 7432132347183600712, guid: 03781e7ba9c974a50b77e977f49e7bb0, type: 3}
+  - {fileID: 2830383328213450121, guid: 33cecc2294ef14093afbb101cb94b12c, type: 3}

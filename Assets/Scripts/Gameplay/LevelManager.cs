@@ -7,6 +7,7 @@ namespace Gameplay
     public class LevelManager : MonoBehaviour
     {
         [SerializeField] private SlimePool slimePool;
+        [SerializeField] private LevelBuilder levelBuilder;
         [SerializeField] private ChapterData chapterData;
         
         private LevelData _levelData;
@@ -27,6 +28,7 @@ namespace Gameplay
             _levelData = chapterData.levels[_currentLevel];
             
             slimePool.BuildPool(_levelData.initialStoredSlimes, _levelData.initialActiveSmiles);
+            levelBuilder.BuildLevel(_levelData.interactionObjects);
             
             // TODO: it's better to try one more time to implement kinda ICondition interface
             SlimePool.SlimesPoolChanged += CheckConditions;
