@@ -1,43 +1,30 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Gameplay
 {
-    // TODO: it's better to use some kinda of a factory
     public class LevelBuilder : MonoBehaviour
     {
-        [Header("Instantiate Positions")]
-        public List<Transform> wellPositions;
-        public List<Transform> puddlePositions;
-
+        private List<Transform> _interactionObjectPositions;
         private System.Random _random;
 
         public void BuildLevel(List<InteractionObject> interactionObjects)
         {
+            _interactionObjectPositions = GetComponentsInChildren<Transform>().Where(t => t != this.transform).ToList();
             _random = new System.Random();
             
             foreach (var interactionObject in interactionObjects)
             {
-                var availablePositions = new List<Transform>();
-                switch (interactionObject)
-                {
-                    case Destroyer destroyer:
-                        availablePositions = wellPositions;
-                        break;
-                    case Dyer dyer:
-                        availablePositions = puddlePositions;
-                        break;
-                }
-                InstantiateInteractionObject(interactionObject, availablePositions);
+                InstantiateInteractionObject(interactionObject);
             }
         }
 
-        private void InstantiateInteractionObject(InteractionObject interactionObject, List<Transform> positions)
+        private void InstantiateInteractionObject(InteractionObject interactionObject)
         {
-            var index = _random.Next(positions.Count);
-            Instantiate(interactionObject, positions[index].position, Quaternion.identity);
-            positions.RemoveAt(index);
+            var index = _random.Next(_interactionObjectPositions.Count);
+            Instantiate(interactionObject, _interactionObjectPositions[index].position, Quaternion.identity);
+            _interactionObjectPositions.RemoveAt(index);
         }
     }
 }
