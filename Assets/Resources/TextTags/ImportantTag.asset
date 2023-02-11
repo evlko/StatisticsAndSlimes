@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ab8f23b9498410d9f5feda29aab9f4, type: 3}
   m_Name: ImportantTag
   m_EditorClassIdentifier: 
-  tag: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
+  tag: important
+  textColor: {r: 1, g: 0.65739936, b: 0, a: 1}
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  fontName: 
+  fontName: JetBrainsMono-VariableFont_wght SDF
