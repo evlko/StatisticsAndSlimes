@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public class FloatingStatModifier : StatModifier, IColorable, IDestroyable
+    public class DraggableStatModifier : StatModifier, IColorable, IDestroyable
     {
         private SpriteRenderer _spriteRenderer;
         private Dragging _dragging;

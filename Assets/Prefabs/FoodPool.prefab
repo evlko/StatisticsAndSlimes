@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff03be3bbb59b4cd19cf7b01b5ed586b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatingStatModifier: {fileID: 6371193984893785802, guid: 7d857576cd3bb4e93b98b7868df54602, type: 3}
+  draggableStatModifier: {fileID: 6371193984893785802, guid: 7d857576cd3bb4e93b98b7868df54602, type: 3}

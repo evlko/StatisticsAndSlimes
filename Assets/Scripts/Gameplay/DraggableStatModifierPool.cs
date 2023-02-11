@@ -2,15 +2,15 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public class FloatingStatModifierPool : InteractionObject
+    public class DraggableStatModifierPool : InteractionObject
     {
-        [SerializeField] private FloatingStatModifier floatingStatModifier;
+        [SerializeField] private DraggableStatModifier draggableStatModifier;
         private Transform _transform;
 
         private void Awake()
         {
             _transform = this.GetComponent<Transform>();
-            var floatingStatModifierInstance = Instantiate(floatingStatModifier, _transform.position, Quaternion.identity);
+            var floatingStatModifierInstance = Instantiate(draggableStatModifier, _transform.position, Quaternion.identity);
             floatingStatModifierInstance.BackPosition = _transform;
         }
 
