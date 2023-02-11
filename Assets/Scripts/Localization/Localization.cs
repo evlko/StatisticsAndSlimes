@@ -9,8 +9,7 @@ namespace Localization
     {
         private static Dictionary<string, Dictionary<string, string>> _localizationMap =
             new Dictionary<string, Dictionary<string, string>>();
-
-        private string currentLanguage;
+        private string _currentLanguage;
 
         public static Action LoadLocalized;
 
@@ -21,8 +20,8 @@ namespace Localization
                 PlayerPrefs.SetString("Language", "en");
             }
 
-            currentLanguage = PlayerPrefs.GetString("Language");
-            LoadLocalizationMap(currentLanguage);
+            _currentLanguage = PlayerPrefs.GetString("Language");
+            LoadLocalizationMap(_currentLanguage);
         }
 
         private void LoadLocalizationMap(string lang)
@@ -35,19 +34,19 @@ namespace Localization
 
         public static string GetValueByKey(LocalizationGroup group, string key)
         {
-            return _localizationMap[group.ToString()][key];
+            return TextTagAggregation.SetTagValue(_localizationMap[group.ToString()][key]);
         }
 
         public void SwitchLocalization()
         {
-            currentLanguage = currentLanguage switch
+            _currentLanguage = _currentLanguage switch
             {
                 "en" => "ru",
                 "ru" => "en",
-                _ => currentLanguage
+                _ => _currentLanguage
             };
-            PlayerPrefs.SetString("Language", currentLanguage);
-            LoadLocalizationMap(currentLanguage);
+            PlayerPrefs.SetString("Language", _currentLanguage);
+            LoadLocalizationMap(_currentLanguage);
         }
     }
 
