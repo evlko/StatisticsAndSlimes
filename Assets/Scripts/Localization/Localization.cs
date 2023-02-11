@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace Localization
 {
-    public class Localization : MonoBehaviour
+    public static class Localization
     {
         private static Dictionary<string, Dictionary<string, string>> _localizationMap =
             new Dictionary<string, Dictionary<string, string>>();
-        private string _currentLanguage;
+        private static string _currentLanguage;
 
         public static Action LoadLocalized;
 
-        private void Awake()
+        static Localization()
         {
             if (!PlayerPrefs.HasKey("Language"))
             {
@@ -24,7 +24,7 @@ namespace Localization
             LoadLocalizationMap(_currentLanguage);
         }
 
-        private void LoadLocalizationMap(string lang)
+        private static void LoadLocalizationMap(string lang)
         {
             var jsonString = Resources.Load<TextAsset>(lang).ToString();
             _localizationMap =
@@ -37,7 +37,7 @@ namespace Localization
             return TextTagAggregation.SetTagValue(_localizationMap[group.ToString()][key]);
         }
 
-        public void SwitchLocalization()
+        public static void SwitchLocalization()
         {
             _currentLanguage = _currentLanguage switch
             {
