@@ -4,7 +4,6 @@ namespace Gameplay
 {
     public abstract class InteractionObject : MonoBehaviour
     {
-        protected abstract void Interact(Transform t);
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.transform.GetComponent<Dragging>()?.isDragging == false)
@@ -12,6 +11,8 @@ namespace Gameplay
                 Interact(other.transform);
             }
         }
+        
+        protected abstract void Interact(Transform t);
     }
 
     public enum InteractionTags

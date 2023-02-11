@@ -1,5 +1,4 @@
 using Interfaces;
-using Models;
 using UnityEngine;
 
 namespace Gameplay
@@ -7,21 +6,26 @@ namespace Gameplay
     public class FloatingStatModifier : StatModifier, IColorable, IDestroyable
     {
         private SpriteRenderer _spriteRenderer;
+        private Dragging _dragging;
         private Transform _transform;
-        private Vector2 _backPosition;
+        private Transform _backPosition;
+
+        public Transform BackPosition
+        {
+            set => _backPosition = value;
+        }
 
         private void Awake()
         {
             _spriteRenderer = this.GetComponent<SpriteRenderer>();
             _transform = transform.GetComponent<Transform>();
-            _backPosition = _transform.position;
-            this.gameObject.AddComponent<Dragging>();
+            _dragging = this.gameObject.AddComponent<Dragging>();
         }
 
         public void Color(Color newColor)
         {
             _spriteRenderer.color = newColor;
-            // TO-DO map new color with stats if there is no than default (current)
+            // TODO: map new color with stats if there is no then default (current)
         }
 
         public void Color(float alpha)
@@ -33,13 +37,23 @@ namespace Gameplay
 
         protected override void Interact(Transform t)
         {
-            t.GetComponent<Slime>()?.UpdateSlimeQuantitativeFeature(modifiedQuantitativeFeature, value);
+            if (_dragging.isDragging) return;
+            var slime = t.GetComponent<Slime>();
+            if (slime == null) return;
+            slime.UpdateSlimeQuantitativeFeature(modifiedQuantitativeFeature, value);
             Destroy();
         }
         
         public void Destroy()
         {
-            _transform.position = _backPosition;
+            if (_backPosition != null)
+            {
+                _transform.position = _backPosition.position;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

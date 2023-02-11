@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Gameplay
@@ -55,23 +54,22 @@ namespace Gameplay
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (IgnoreWhileOnDrag()) return;
-            outline.gameObject.SetActive(CheckTag(other.tag));
+            if (IsDragging()) return;
+            outline.gameObject.SetActive(CheckInteractionTag(other.tag));
         }
         
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (IgnoreWhileOnDrag()) return;
+            if (IsDragging()) return;
             outline.gameObject.SetActive(false);
         }
 
-        private bool IgnoreWhileOnDrag()
+        private bool IsDragging()
         {
-            if (!_isDraggable) return false;
-            return _dragging.isDragging;
+            return _isDraggable && _dragging.isDragging;
         }
 
-        private bool CheckTag(string gameObjectTag)
+        private bool CheckInteractionTag(string gameObjectTag)
         {
             switch (interactionTag)
             {
@@ -82,7 +80,7 @@ namespace Gameplay
                 case InteractionTags.None:
                     return false;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return false;
             }
         }
     }
