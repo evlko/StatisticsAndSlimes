@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Gameplay;
 using UnityEngine;
@@ -9,13 +10,61 @@ namespace Models
     {
         [Header("Categorical Features")]
         public string slimeName;
-        public ColorsStorage.ColorNames color;
+        public ColorData color;
         [Header("Quantitative Features")]
-        public float sweetness;
-        public float slipperiness;
+        public List<QuantitativeFeature> quantitativeFeature;
+        [Serializable] public struct QuantitativeFeature
+        {
+            public SlimeQuantitativeFeatures slimeQuantitativeFeature;
+            public float value;
+        }
 
-        public Dictionary<SlimeQuantitativeFeatures, float> QuantitativeFeatures = new Dictionary<SlimeQuantitativeFeatures, float>();
-        public Dictionary<SlimeCategoricalFeatures, string> CategoricalFeatures = new Dictionary<SlimeCategoricalFeatures, string>();
+        public readonly Dictionary<SlimeQuantitativeFeatures, float> QuantitativeFeatures = new Dictionary<SlimeQuantitativeFeatures, float>();
+        public readonly Dictionary<SlimeCategoricalFeatures, string> CategoricalFeatures = new Dictionary<SlimeCategoricalFeatures, string>();
+
+        private void OnEnable()
+        {
+            foreach (var feature in quantitativeFeature)
+            {
+                QuantitativeFeatures[feature.slimeQuantitativeFeature] = feature.value;
+            }
+
+            CategoricalFeatures[SlimeCategoricalFeatures.Color] = color.color.ToString();
+        }
+
+        public bool Equals(SlimeData otherData)
+        {
+            if ((object)otherData == null)
+            {
+                return false;
+            }
+
+            if (this.slimeName != otherData.slimeName)
+            {
+                return false;
+            }
+
+            foreach(var key in QuantitativeFeatures.Keys)
+            {
+                if (this.QuantitativeFeatures[key] != otherData.QuantitativeFeatures[key])
+                {
+                    return false;
+                }
+            }
+            
+            foreach(var key in CategoricalFeatures.Keys)
+            {
+                if (this.CategoricalFeatures[key] != otherData.CategoricalFeatures[key])
+                {
+                    Debug.Log(key);
+                    Debug.Log(this.CategoricalFeatures[key]);
+                    Debug.Log(otherData.CategoricalFeatures[key]);
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 
     public enum SlimeQuantitativeFeatures

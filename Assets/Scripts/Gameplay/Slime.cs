@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Interfaces;
 using Models;
 using UnityEngine;
@@ -28,8 +27,9 @@ namespace Gameplay
         {
             _slimeData = slimeData;
             _slimePool = slimePool;
-            Color(ColorsStorage.ColorMap[_slimeData.color.ToString()]);
-            RegisterStats();
+            Color(_slimeData.color.color);
+            UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Sweetness);
+            UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Slipperiness);
         }
 
         private void Awake()
@@ -79,14 +79,6 @@ namespace Gameplay
         public void Destroy()
         {
             _slimePool.RemoveSlime(this);
-        }
-
-        private void RegisterStats()
-        {
-            _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness] = _slimeData.sweetness;
-            UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Sweetness);
-            _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Slipperiness] = _slimeData.slipperiness;
-            UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Slipperiness);
         }
 
         public void UpdateSlimeQuantitativeFeature(SlimeQuantitativeFeatures slimeQuantitativeFeature, float value)

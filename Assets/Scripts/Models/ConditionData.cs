@@ -6,9 +6,10 @@ namespace Models
     [CreateAssetMenu(fileName = "Condition", menuName = "ScriptableObjects/Condition", order = 3)]
     public class ConditionData : ScriptableObject
     {
+        public PlaygroundCharacteristicsTypes playgroundCharacteristicsTypes;
+        public SlimesCharacteristics slimesCharacteristics;
         public CharacteristicTypes characteristicType;
         public SampleCharacteristics sampleCharacteristic;
-        public SampleCharacteristicsTypes sampleCharacteristicsTypes;
         public FeatureTypes featureType;
         public SlimeQuantitativeFeatures slimeQuantitativeFeature;
         public QuantitativeFeatureCharacteristics quantitativeFeatureCharacteristic;
@@ -16,6 +17,7 @@ namespace Models
         public CategoricalFeatureCharacteristics categoricalFeatureCharacteristic;
         public int value;
         public List<SlimeData> aliveSlimes;
+        public List<SlimeData> certainSlimes;
     }
 
     public enum CharacteristicTypes
@@ -26,12 +28,16 @@ namespace Models
 
     public enum SampleCharacteristics
     {
-        Size,
-        AlivedSlimes
+        Size
+    }
+    
+    public enum SlimesCharacteristics {
+        AlivedSlimes,
+        CertainData
     }
     
     // TODO this is not checked and used lol
-    public enum SampleCharacteristicsTypes
+    public enum PlaygroundCharacteristicsTypes
     {
         Numerical,
         Slimes
