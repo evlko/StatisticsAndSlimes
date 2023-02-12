@@ -11,7 +11,7 @@ namespace Models
         public string slimeName;
         public ColorsStorage.ColorNames color;
         [Header("Quantitative Features")]
-        public float happiness;
+        public float sweetness;
         public float slipperiness;
 
         public Dictionary<SlimeQuantitativeFeatures, float> QuantitativeFeatures = new Dictionary<SlimeQuantitativeFeatures, float>();
@@ -20,7 +20,7 @@ namespace Models
 
     public enum SlimeQuantitativeFeatures
     {
-        Happiness,
+        Sweetness,
         Slipperiness
     }
 

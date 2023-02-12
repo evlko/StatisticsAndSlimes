@@ -10,15 +10,19 @@ namespace Gameplay
         [Header("Slimes")]
         [SerializeField] private Slime slime;
         [SerializeField] private Transform slimePoolPosition;
-
         [Header("Spawn")]
         [SerializeField] private Vector2 xSpawnBorders;
         [SerializeField] private Vector2 ySpawnBorders;
+
+        [Header("Hints Keys")] 
+        [SerializeField] private string hintStoredIsEmpty;
+        [SerializeField] private string hintRemoveRejected;
         
         private static List<Slime> _storedSlimes = new List<Slime>();
         private static List<Slime> _activeSlimes = new List<Slime>();
 
         public static Action SlimesPoolChanged;
+        public static Action<string> ShowPoolHint;
 
         public static List<Slime> ActiveSlimes => _activeSlimes;
         
@@ -55,7 +59,11 @@ namespace Gameplay
         {
             if (pickedSlime == null)
             {
-                if (_storedSlimes.Count <= 0) return;
+                if (_storedSlimes.Count <= 0)
+                {
+                    ShowPoolHint?.Invoke(hintStoredIsEmpty);
+                    return;
+                }
                 pickedSlime = _storedSlimes[0];
             }
 
@@ -74,6 +82,12 @@ namespace Gameplay
 
         public void RemoveSlime(Slime s)
         {
+            if (s.SlimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness] > 60)
+            { 
+                ShowPoolHint?.Invoke(hintRemoveRejected);
+                return;
+            }
+            
             _activeSlimes.Remove(s);
             _storedSlimes.Add(s);
             s.transform.position = slimePoolPosition.position;

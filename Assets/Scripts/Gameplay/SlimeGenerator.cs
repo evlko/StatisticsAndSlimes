@@ -4,7 +4,8 @@ namespace Gameplay
 {
     public class SlimeGenerator : MonoBehaviour
     {
-        public SlimePool slimePool;
+        // TODO: meh, not cool property
+        [SerializeField] private SlimePool slimePool;
         private void OnMouseDown()
         {
             slimePool.ActivateSlime();

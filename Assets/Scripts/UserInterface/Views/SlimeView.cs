@@ -1,3 +1,4 @@
+using System;
 using Gameplay;
 using Models;
 using TMPro;
@@ -8,7 +9,7 @@ namespace Views
     public class SlimeView : View
     {
         [SerializeField] private TextMeshProUGUI slimeNameText;
-        [SerializeField] private TextMeshProUGUI statHappinessText;
+        [SerializeField] private TextMeshProUGUI statSweetnessText;
         [SerializeField] private TextMeshProUGUI statSlipperinessText;
 
         private SlimeData _slimeData;
@@ -18,6 +19,8 @@ namespace Views
             Slime.ShowSlimeData += ShowSlimeView;
             Slime.SlimeFeatureChanged += UpdateSlimeView;
             Slime.HideSlimeData += HideSlimeView;
+            
+            ActivateView(false);
         }
 
         private void ShowSlimeView(SlimeData slimeData)
@@ -31,8 +34,10 @@ namespace Views
         {
             if (!_slimeData) return;
             slimeNameText.text = _slimeData.slimeName;
-            statHappinessText.text = _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Happiness].ToString();
-            statSlipperinessText.text = _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Slipperiness].ToString();
+            statSlipperinessText.text = String.Format(statSlipperinessText.text,
+                _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Slipperiness]);
+            statSweetnessText.text = String.Format(statSweetnessText.text,
+                _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness]);
         }
 
         private void HideSlimeView()

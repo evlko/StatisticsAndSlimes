@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Interfaces;
 using Models;
 using UnityEngine;
@@ -12,8 +13,10 @@ namespace Gameplay
         private SpriteRenderer _spriteRenderer;
         private Animator _animator;
         private Dragging _dragging;
+        private Transform _transform;
         
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
+        private static readonly int Slipperiness = Animator.StringToHash("slipperiness");
         
         public SlimeData SlimeData => _slimeData;
 
@@ -31,6 +34,7 @@ namespace Gameplay
 
         private void Awake()
         {
+            _transform = this.GetComponent<Transform>();
             _spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
             _animator = this.GetComponentInChildren<Animator>();
             _dragging = this.gameObject.AddComponent<Dragging>();
@@ -41,7 +45,9 @@ namespace Gameplay
         private void Jump()
         {
             if (_animator != null)
+            {
                 _animator.SetBool(IsJumping, true);
+            }
         }
 
         private void OnMouseEnter()
@@ -77,13 +83,16 @@ namespace Gameplay
 
         private void RegisterStats()
         {
-            _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Happiness] = _slimeData.happiness;
+            _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness] = _slimeData.sweetness;
+            UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Sweetness);
             _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Slipperiness] = _slimeData.slipperiness;
+            UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Slipperiness);
         }
-        
+
         public void UpdateSlimeQuantitativeFeature(SlimeQuantitativeFeatures slimeQuantitativeFeature, float value)
         {
             _slimeData.QuantitativeFeatures[slimeQuantitativeFeature] += value;
+            UpdateQuantitativeFeatureView(slimeQuantitativeFeature);
             SlimeFeatureChanged?.Invoke();
         }
 
@@ -91,6 +100,25 @@ namespace Gameplay
         {
             _slimeData.CategoricalFeatures[slimeCategoricalFeature] = value;
             SlimeFeatureChanged?.Invoke();
+        }
+
+        private void UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures slimeQuantitativeFeature)
+        {
+            var value = _slimeData.QuantitativeFeatures[slimeQuantitativeFeature];
+            
+            switch (slimeQuantitativeFeature)
+            {
+                case SlimeQuantitativeFeatures.Sweetness:
+                    var sweetnessParam = Math.Min(1 + Math.Max(0, (value - 10) / 100), 2);
+                    _transform.localScale = new Vector2(sweetnessParam, sweetnessParam);
+                    break;
+                case SlimeQuantitativeFeatures.Slipperiness:
+                    var slipperinessParam = Math.Min(Math.Max(0.1f, 1 - (value - 10) / 100), 1);
+                    _animator.SetFloat(Slipperiness, slipperinessParam);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(slimeQuantitativeFeature), slimeQuantitativeFeature, null);
+            }
         }
     }
 }
