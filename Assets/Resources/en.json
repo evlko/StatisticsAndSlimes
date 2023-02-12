@@ -1,10 +1,10 @@
 {
     "LevelTask": {
-        "level_1": "t_value",
-        "level_2": "t_value",
-        "level_3": "t_value",
-        "level_4": "t_value",
-        "level_5": "t_value"
+        "level_1": "t_value_1",
+        "level_2": "t_value_2",
+        "level_3": "t_value_3",
+        "level_4": "t_value_4",
+        "level_5": "t_value_5"
     },
     "LevelTheory": {
         "level_1": "t_value",
@@ -26,5 +26,13 @@
         "level_3": "t_value",
         "level_4": "t_value",
         "level_5": "t_value"
+    },
+    "UI": {
+        "btn_play": "play",
+        "btn_change_language": "change language",
+        "hint_full": "full",
+        "hint_deactivate": "too big",
+        "slime_slipperiness": "slipperiness: {0}",
+        "slime_sweetness": "sweetness: {0}"
     }
 }

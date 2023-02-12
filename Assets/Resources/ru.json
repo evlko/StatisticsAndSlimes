@@ -26,5 +26,14 @@
         "level_3": "t_value",
         "level_4": "t_value",
         "level_5": "t_value"
+    },
+    "UI": {
+        "empty": "error",
+        "btn_play": "играть",
+        "btn_change_language": "переключить язык",
+        "hint_full": "переполнено",
+        "hint_deactivate": "большой",
+        "slime_slipperiness": "слизкость: {0}",
+        "slime_sweetness": "сладкость: {0}"
     }
 }

@@ -24,6 +24,11 @@ namespace Localization
             Localization.LoadLocalized += GetTextValue;
         }
 
+        private void OnEnable()
+        {
+            GetTextValue();
+        }
+
         private void GetTextValue()
         {
             if (_textMeshPro == null)

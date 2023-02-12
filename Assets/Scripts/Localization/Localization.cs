@@ -19,7 +19,6 @@ namespace Localization
             {
                 PlayerPrefs.SetString("Language", "en");
             }
-
             _currentLanguage = PlayerPrefs.GetString("Language");
             LoadLocalizationMap(_currentLanguage);
         }
@@ -55,6 +54,7 @@ namespace Localization
         LevelTask,
         LevelTheory,
         PythonHint,
-        TableHint
+        TableHint,
+        UI
     }
 }
