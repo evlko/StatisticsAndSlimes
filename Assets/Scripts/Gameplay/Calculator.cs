@@ -46,6 +46,27 @@ namespace Gameplay
             return slimes[(size - 1) / 2].SlimeData.QuantitativeFeatures[quantitativeFeature];
         }
 
+        public static float FeatureMode(List<Slime> slimes, SlimeQuantitativeFeatures quantitativeFeature)
+        {
+            return slimes
+                .GroupBy(x => x.SlimeData.QuantitativeFeatures[quantitativeFeature])
+                .OrderByDescending(g => g.Count())
+                .First()
+                .Key;
+        }
+
+        public static int FeatureModeNumber(List<Slime> slimes, SlimeQuantitativeFeatures quantitativeFeature)
+        {
+            var groups = slimes
+                .GroupBy(x => x.SlimeData.QuantitativeFeatures[quantitativeFeature])
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .ToList();
+            var maxCount = groups.Max(g => g.Count);
+            var modes = groups
+                .Where(g => g.Count == maxCount);
+            return modes.Count();
+        }
+
         public static float FeatureQuantileFirst(List<Slime> slimes, SlimeQuantitativeFeatures quantitativeFeature)
         {
             var median = FeatureMedian(slimes, quantitativeFeature);
