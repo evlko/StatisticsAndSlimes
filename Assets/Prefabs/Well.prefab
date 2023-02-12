@@ -104,14 +104,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4, y: 3.75}
+    oldSize: {x: 1.92, y: 3}
     newSize: {x: 12, y: 18.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4, y: 3.75}
+  m_Size: {x: 1.92, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &7432132347183600712
 MonoBehaviour:
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b831467ee604e1992616134a08cd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSpriteRenderer: {fileID: 5162151989765866296}
   outline: {fileID: 1142818115124620925}
   isMouseTriggered: 0
   interactionTag: 0
@@ -187,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 7462306469918467060}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.05, y: 1.05, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2811122329384820785}
   m_RootOrder: 0

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 21414553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4011142941878288853}
   m_RootOrder: 0
@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 4011142941878288853}
   - component: {fileID: 6700543215279429406}
   - component: {fileID: 3937530982510615051}
-  - component: {fileID: 2830383328213450121}
   - component: {fileID: 1573957829}
+  - component: {fileID: 2830383328213450121}
   - component: {fileID: 1573957825}
   m_Layer: 0
   m_Name: Dyer
@@ -186,7 +186,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.8, y: 3.8}
+    oldSize: {x: 2.432, y: 2.432}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -195,19 +195,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
---- !u!114 &2830383328213450121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2499284914855323686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4969b9b5e548143a29a3cbd98a10634f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {fileID: 11400000, guid: 7b0203d246af54498b91ca33fa0dbaa3, type: 2}
 --- !u!50 &1573957829
 Rigidbody2D:
   serializedVersion: 4
@@ -229,6 +216,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2830383328213450121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499284914855323686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4969b9b5e548143a29a3cbd98a10634f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {fileID: 11400000, guid: 7b0203d246af54498b91ca33fa0dbaa3, type: 2}
 --- !u!114 &1573957825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b831467ee604e1992616134a08cd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSpriteRenderer: {fileID: 6700543215279429406}
   outline: {fileID: 21414554}
   isMouseTriggered: 0
   interactionTag: 0

@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b831467ee604e1992616134a08cd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSpriteRenderer: {fileID: 6371193984893785796}
   outline: {fileID: 1562498605}
   isMouseTriggered: 1
   interactionTag: 1

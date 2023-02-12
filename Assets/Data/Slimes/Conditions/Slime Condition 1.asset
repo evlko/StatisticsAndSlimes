@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Slime Condition 1
   m_EditorClassIdentifier: 
   slimeName: Name 1
-  color: 0
-  sweetness: 10
-  slipperiness: 0
+  color: {fileID: 11400000, guid: a7d484a3c13934a9eab203f9bb6bf495, type: 2}
+  quantitativeFeature:
+  - slimeQuantitativeFeature: 0
+    value: 10
+  - slimeQuantitativeFeature: 1
+    value: 0
+  body: {fileID: 0}
+  eyes: {fileID: 0}
+  horns: {fileID: 0}
+  mouth: {fileID: 0}

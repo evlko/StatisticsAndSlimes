@@ -5,6 +5,7 @@ namespace Gameplay
     [DefaultExecutionOrder(100)]
     public class Outline : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer targetSpriteRenderer;
         [SerializeField] private Transform outline;
         [SerializeField] private bool isMouseTriggered;
         [SerializeField] private InteractionTags interactionTag;
@@ -12,9 +13,10 @@ namespace Gameplay
         private Dragging _dragging;
         private bool _isDraggable;
 
-        private void Awake()
+        private void Start()
         {
             _dragging = this.gameObject.GetComponent<Dragging>();
+            outline.GetComponent<SpriteRenderer>().sprite = targetSpriteRenderer.sprite;
             _isDraggable = _dragging != null;
         }
 

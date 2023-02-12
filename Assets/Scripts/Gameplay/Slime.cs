@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Interfaces;
 using Models;
 using UnityEngine;
@@ -9,11 +10,18 @@ namespace Gameplay
     {
         private SlimeData _slimeData;
         private SlimePool _slimePool;
-        private SpriteRenderer _spriteRenderer;
         private Animator _animator;
         private Dragging _dragging;
         private Transform _transform;
         
+        [Header("Visual")]
+        [SerializeField] private SpriteRenderer bodySpriteRenderer;
+        [SerializeField] private SpriteRenderer eyesSpriteRenderer;
+        [SerializeField] private SpriteRenderer mouthSpriteRenderer;
+        [SerializeField] private SpriteRenderer hornsSpriteRenderer;
+        private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>();
+        private Color _currentColor;
+
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
         private static readonly int Slipperiness = Animator.StringToHash("slipperiness");
         
@@ -27,7 +35,23 @@ namespace Gameplay
         {
             _slimeData = slimeData;
             _slimePool = slimePool;
-            Color(_slimeData.color.color);
+
+            bodySpriteRenderer.sprite = _slimeData.body;
+            eyesSpriteRenderer.sprite = _slimeData.eyes;
+            mouthSpriteRenderer.sprite = _slimeData.mouth;
+            hornsSpriteRenderer.sprite = _slimeData.horns;
+
+            _spriteRenderers = new List<SpriteRenderer>()
+            {
+                bodySpriteRenderer,
+                eyesSpriteRenderer,
+                mouthSpriteRenderer,
+                hornsSpriteRenderer
+            };
+
+            _currentColor = _slimeData.color.color;
+            
+            Color(_currentColor);
             UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Sweetness);
             UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Slipperiness);
         }
@@ -35,7 +59,6 @@ namespace Gameplay
         private void Awake()
         {
             _transform = this.GetComponent<Transform>();
-            _spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
             _animator = this.GetComponentInChildren<Animator>();
             _dragging = this.gameObject.AddComponent<Dragging>();
 
@@ -63,17 +86,22 @@ namespace Gameplay
             }
         }
 
-        public void Color(Color newColor)
+        public void Color(Color color)
         {
-            _spriteRenderer.color = newColor;
-            UpdateSlimeCategoricalFeature(SlimeCategoricalFeatures.Color, newColor.ToString());
+            foreach (var spriteRenderer in _spriteRenderers)
+            {
+                spriteRenderer.color = color;
+            }
+            UpdateSlimeCategoricalFeature(SlimeCategoricalFeatures.Color, color.ToString());
         }
 
         public void Color(float alpha)
         {
-            var currentColor = _spriteRenderer.color;
-            currentColor.a = alpha;
-            _spriteRenderer.color = currentColor;
+            _currentColor.a = alpha;
+            foreach (var spriteRenderer in _spriteRenderers)
+            {
+                spriteRenderer.color = _currentColor;
+            }
         }
 
         public void Destroy()
