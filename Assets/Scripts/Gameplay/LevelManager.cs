@@ -39,8 +39,6 @@ namespace Gameplay
 
         private void CheckConditions()
         {
-            Debug.Log("Checkin for level " + _currentLevel.ToString());
-            Debug.Log(SlimePool.ActiveSlimes.Count);
             if (ConditionsTracker.AllConditionsAreSatisfied(SlimePool.ActiveSlimes, _levelData.conditions))
             {
                 SlimePool.SlimesPoolChanged -= CheckConditions;
@@ -48,6 +46,7 @@ namespace Gameplay
                 _currentLevel += 1;
                 PlayerPrefs.SetInt("Level", _currentLevel);
                 LevelCompleted?.Invoke();
+                LevelCompleted = null;
             };
         }
     }
