@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    void Awake()
+    private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        SceneManager.LoadScene("SampleScene");
     }
 }
