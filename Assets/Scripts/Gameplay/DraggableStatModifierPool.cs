@@ -5,13 +5,12 @@ namespace Gameplay
     public class DraggableStatModifierPool : InteractionObject
     {
         [SerializeField] private DraggableStatModifier draggableStatModifier;
-        private Transform _transform;
+        [SerializeField] private Transform poolPosition;
 
         private void Awake()
         {
-            _transform = this.GetComponent<Transform>();
-            var floatingStatModifierInstance = Instantiate(draggableStatModifier, _transform.position, Quaternion.identity);
-            floatingStatModifierInstance.BackPosition = _transform;
+            var floatingStatModifierInstance = Instantiate(draggableStatModifier, poolPosition.position, Quaternion.identity);
+            floatingStatModifierInstance.BackPosition = poolPosition;
         }
 
         protected override void Interact(Transform t)
