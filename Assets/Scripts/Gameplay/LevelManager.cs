@@ -6,16 +6,16 @@ namespace Gameplay
 {
     public class LevelManager : MonoBehaviour
     {
+        [SerializeField] private ChapterData chapterData;
         [SerializeField] private SlimePool slimePool;
         [SerializeField] private LevelBuilder levelBuilder;
-        [SerializeField] private ChapterData chapterData;
         
         private LevelData _levelData;
         private int _currentLevel;
 
         public static Action<LevelData> ShowLevelData;
         public static Action LevelCompleted;
-        
+
         private void Awake()
         {
             if (!PlayerPrefs.HasKey("Level"))
@@ -46,7 +46,6 @@ namespace Gameplay
                 _currentLevel += 1;
                 PlayerPrefs.SetInt("Level", _currentLevel);
                 LevelCompleted?.Invoke();
-                LevelCompleted = null;
             };
         }
     }

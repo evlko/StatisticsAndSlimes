@@ -20,22 +20,28 @@ namespace Localization
             {
                 var tag = "<" + t.tag + ">";
                 if (!text.Contains(tag)) continue;
-                text = text.Replace(tag, GenerateTagValues(t, false));
+                text = text.Replace(tag, GenerateTagValues(t));
                 tag = "</" + t.tag + ">";
-                text = text.Replace(tag, GenerateTagValues(t, true));
+                text = text.Replace(tag, GenerateClosedTag());
             }
 
             return text;
         }
         
-        private static string GenerateTagValues(TextTagData tag, bool closed)
+        private static string GenerateTagValues(TextTagData tag)
         {
             var result = "";
             result += "<font=\"" + tag.fontName + "\">";
             result += "<color=#" + ColorUtility.ToHtmlStringRGBA(tag.textColor) + ">";
             result += "<mark=#" + ColorUtility.ToHtmlStringRGBA(tag.backgroundColor) + ">";
 
-            return !closed ? result : result.Replace("<", "</");
+            return result;
+        }
+
+        private static string GenerateClosedTag()
+        {
+            var result = "</font></color></mark>";
+            return result;
         }
     }
 }

@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: Slime 1
   m_EditorClassIdentifier: 
   slimeName: Name 1
-  color: {fileID: 11400000, guid: a7d484a3c13934a9eab203f9bb6bf495, type: 2}
+  color: {fileID: 11400000, guid: 3f4e2f00bf6534172ae9fced9fa7654c, type: 2}
   quantitativeFeature:
   - slimeQuantitativeFeature: 0
-    value: 0
+    value: 9
   - slimeQuantitativeFeature: 1
-    value: 0
-  body: {fileID: 21300000, guid: 1ede9546a345c4ec58b0b020f9e03344, type: 3}
-  eyes: {fileID: 21300000, guid: c717697abb7e8472587eeef2fbe18f75, type: 3}
-  horns: {fileID: 21300000, guid: c103fe14eeffc4a73a09a7c976eb3b76, type: 3}
-  mouth: {fileID: 21300000, guid: d0d8df923198f4a7db7f8dbf6a161a5d, type: 3}
+    value: 50
+  body: {fileID: 21300000, guid: 84fea334af4cf4dd2ab0631959106159, type: 3}

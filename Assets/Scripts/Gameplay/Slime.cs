@@ -13,13 +13,7 @@ namespace Gameplay
         private Animator _animator;
         private Dragging _dragging;
         private Transform _transform;
-        
-        [Header("Visual")]
-        [SerializeField] private SpriteRenderer bodySpriteRenderer;
-        [SerializeField] private SpriteRenderer eyesSpriteRenderer;
-        [SerializeField] private SpriteRenderer mouthSpriteRenderer;
-        [SerializeField] private SpriteRenderer hornsSpriteRenderer;
-        private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>();
+        private SpriteRenderer _spriteRenderer;
         private Color _currentColor;
 
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
@@ -36,19 +30,7 @@ namespace Gameplay
             _slimeData = slimeData;
             _slimePool = slimePool;
 
-            bodySpriteRenderer.sprite = _slimeData.body;
-            eyesSpriteRenderer.sprite = _slimeData.eyes;
-            mouthSpriteRenderer.sprite = _slimeData.mouth;
-            hornsSpriteRenderer.sprite = _slimeData.horns;
-
-            _spriteRenderers = new List<SpriteRenderer>()
-            {
-                bodySpriteRenderer,
-                eyesSpriteRenderer,
-                mouthSpriteRenderer,
-                hornsSpriteRenderer
-            };
-
+            _spriteRenderer.sprite = _slimeData.body;
             _currentColor = _slimeData.color.color;
             
             Color(_currentColor);
@@ -58,6 +40,7 @@ namespace Gameplay
 
         private void Awake()
         {
+            _spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
             _transform = this.GetComponent<Transform>();
             _animator = this.GetComponentInChildren<Animator>();
             _dragging = this.gameObject.AddComponent<Dragging>();
@@ -88,20 +71,15 @@ namespace Gameplay
 
         public void Color(Color color)
         {
-            foreach (var spriteRenderer in _spriteRenderers)
-            {
-                spriteRenderer.color = color;
-            }
+            _spriteRenderer.color = color;
+            _currentColor = color;
             UpdateSlimeCategoricalFeature(SlimeCategoricalFeatures.Color, color.ToString());
         }
 
         public void Color(float alpha)
         {
             _currentColor.a = alpha;
-            foreach (var spriteRenderer in _spriteRenderers)
-            {
-                spriteRenderer.color = _currentColor;
-            }
+            _spriteRenderer.color = _currentColor;
         }
 
         public void Destroy()

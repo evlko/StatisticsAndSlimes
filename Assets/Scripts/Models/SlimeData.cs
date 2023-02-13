@@ -15,10 +15,7 @@ namespace Models
         public List<QuantitativeFeature> quantitativeFeature;
         [Header("Visualization")] 
         public Sprite body;
-        public Sprite eyes;
-        public Sprite horns;
-        public Sprite mouth;
-        
+
         [Serializable] public struct QuantitativeFeature
         {
             public SlimeQuantitativeFeatures slimeQuantitativeFeature;
