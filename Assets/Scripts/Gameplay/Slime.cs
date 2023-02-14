@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Interfaces;
 using Models;
 using UnityEngine;
@@ -18,7 +17,7 @@ namespace Gameplay
 
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
         private static readonly int Slipperiness = Animator.StringToHash("slipperiness");
-        
+
         public SlimeData SlimeData => _slimeData;
 
         public static Action<SlimeData> ShowSlimeData;
@@ -32,7 +31,7 @@ namespace Gameplay
 
             _spriteRenderer.sprite = _slimeData.body;
             _currentColor = _slimeData.color.color;
-            
+
             Color(_currentColor);
             UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Sweetness);
             UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Slipperiness);
@@ -108,19 +107,28 @@ namespace Gameplay
         private void UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures slimeQuantitativeFeature)
         {
             var value = _slimeData.QuantitativeFeatures[slimeQuantitativeFeature];
-            
+
             switch (slimeQuantitativeFeature)
             {
                 case SlimeQuantitativeFeatures.Sweetness:
-                    var sweetnessParam = Math.Min(1 + Math.Max(0, (value - 10) / 100), 2);
+                    var sweetnessParam =
+                        Math.Min(
+                            GameplayConsts.SlimeMinScale + Math.Max(0,
+                                (value - GameplayConsts.SlimeFeaturesDefaultValue) /
+                                GameplayConsts.SlimeFeaturesDivider), GameplayConsts.SlimeMaxScale);
                     _transform.localScale = new Vector2(sweetnessParam, sweetnessParam);
                     break;
                 case SlimeQuantitativeFeatures.Slipperiness:
-                    var slipperinessParam = Math.Min(Math.Max(0.1f, 1 - (value - 10) / 100), 1);
+                    var slipperinessParam =
+                        Math.Min(
+                            Math.Max(GameplayConsts.SlimeMinAnimationSpeed,
+                                1 - (value - GameplayConsts.SlimeFeaturesDefaultValue) /
+                                GameplayConsts.SlimeFeaturesDivider), GameplayConsts.SlimeMaxAnimationSpeed);
                     _animator.SetFloat(Slipperiness, slipperinessParam);
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(slimeQuantitativeFeature), slimeQuantitativeFeature, null);
+                    throw new ArgumentOutOfRangeException(nameof(slimeQuantitativeFeature), slimeQuantitativeFeature,
+                        null);
             }
         }
     }

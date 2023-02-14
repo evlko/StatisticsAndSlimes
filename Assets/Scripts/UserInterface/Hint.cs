@@ -28,5 +28,10 @@ namespace UserInterface
             yield return new WaitForSecondsRealtime(3);
             this.gameObject.SetActive(false);
         }
+
+        private void OnDestroy()
+        {
+            SlimePool.ShowPoolHint -= ShowHint;
+        }
     }
 }

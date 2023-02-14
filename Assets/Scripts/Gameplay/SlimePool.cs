@@ -83,7 +83,7 @@ namespace Gameplay
 
         public void RemoveSlime(Slime s)
         {
-            if (s.SlimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness] > 60)
+            if (s.SlimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness] > GameplayConsts.SlimeMaxSweetnessForDestroy)
             { 
                 ShowPoolHint?.Invoke(hintRemoveRejected);
                 return;
