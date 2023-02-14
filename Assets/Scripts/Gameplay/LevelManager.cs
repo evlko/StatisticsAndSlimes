@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
+    [DefaultExecutionOrder(100)]
     public class LevelManager : MonoBehaviour
     {
         [SerializeField] protected SlimePool slimePool;

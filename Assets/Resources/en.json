@@ -35,6 +35,7 @@
         "level_5": "t_value_5"
     },
     "UI": {
+        "empty": "error",
         "btn_play": "play",
         "btn_battle": "arena",
         "btn_change_language": "Русский",
