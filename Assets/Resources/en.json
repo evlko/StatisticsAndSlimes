@@ -29,8 +29,10 @@
     },
     "UI": {
         "btn_play": "play",
+        "btn_battle": "battle",
         "btn_change_language": "Русский",
         "btn_exit": "exit",
+        "btn_reset_progress": "reset progress",
         "hint_full": "full",
         "hint_deactivate": "too big",
         "hint_click_to_close": "click to close",

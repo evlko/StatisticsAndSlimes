@@ -1,8 +1,8 @@
 {
     "LevelTask": {
         "level_1": "Собери максимальную выборку слизней",
-        "level_2": "t_value",
-        "level_3": "t_value",
+        "level_2": "Минимизируй выборку.",
+        "level_3": "Сделай так, чтобы мощности множеств категориальных признаков в выборке были равны.",
         "level_4": "t_value",
         "level_5": "t_value"
     },
@@ -30,8 +30,10 @@
     "UI": {
         "empty": "error",
         "btn_play": "играть",
+        "btn_battle": "арена",
         "btn_exit": "выйти",
         "btn_change_language": "English",
+        "btn_reset_progress": "сбросить прогресс",
         "hint_full": "переполнено",
         "hint_deactivate": "большой",
         "hint_click_to_close": "нажми, чтобы закрыть",
