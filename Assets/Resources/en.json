@@ -27,16 +27,25 @@
         "level_4": "t_value",
         "level_5": "t_value"
     },
+    "ArenaTask": {
+        "level_1": "t_value_1",
+        "level_2": "t_value_2",
+        "level_3": "t_value_3",
+        "level_4": "t_value_4",
+        "level_5": "t_value_5"
+    },
     "UI": {
         "btn_play": "play",
-        "btn_battle": "battle",
+        "btn_battle": "arena",
         "btn_change_language": "Русский",
         "btn_exit": "exit",
         "btn_reset_progress": "reset progress",
-        "hint_full": "full",
-        "hint_deactivate": "too big",
+        "hint_full": "no more...",
+        "hint_deactivate": "doesn't get through...",
         "hint_click_to_close": "click to close",
         "slime_slipperiness": "slipperiness: {0}",
-        "slime_sweetness": "sweetness: {0}"
+        "slime_sweetness": "sweetness: {0}",
+        "arena_description": "super puper arena",
+        "arena_answer": "answer..."
     }
 }

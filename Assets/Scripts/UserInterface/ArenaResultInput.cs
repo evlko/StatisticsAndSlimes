@@ -16,7 +16,10 @@ namespace UserInterface
         
         public void AnswerChanged()
         {
-            ConditionChecked?.Invoke(float.Parse(_inputField.text));
+            if (_inputField.text.Length > 0)
+            {
+                ConditionChecked?.Invoke(float.Parse(_inputField.text));
+            }
         }
     }
 }

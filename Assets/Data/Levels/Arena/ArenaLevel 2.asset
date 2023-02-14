@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0af58319f2049cbb081f1bc2889522, type: 3}
   m_Name: ArenaLevel 2
   m_EditorClassIdentifier: 
-  levelKey: level_1
+  levelKey: level_2
   slimes:
   - {fileID: 11400000, guid: 392d7778c8069496385d2ad520cf5349, type: 2}
-  result: 10
+  result: 15

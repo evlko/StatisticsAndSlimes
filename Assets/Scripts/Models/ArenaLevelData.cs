@@ -8,6 +8,6 @@ namespace Models
     {
         [Header("Data")]
         public List<SlimeData> slimes;
-        public int result;
+        public float result;
     }
 }
