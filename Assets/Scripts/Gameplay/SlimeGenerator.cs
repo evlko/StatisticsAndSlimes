@@ -15,9 +15,19 @@ namespace Gameplay
             _spriteRenderer = this.GetComponent<SpriteRenderer>();
         }
 
+        private void Start()
+        {
+            CheckPool();
+        }
+
         private void OnMouseDown()
         {
             slimePool.ActivateSlime();
+            CheckPool();
+        }
+
+        private void CheckPool()
+        {
             _spriteRenderer.sprite = SlimePool.StoredSlimes.Count == 0 ? emptyPool : notEmptyPool;
         }
     }

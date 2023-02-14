@@ -40,7 +40,7 @@ namespace Localization
 
         private static string GenerateClosedTag()
         {
-            var result = "</font></color></mark>";
+            var result = "</mark></color></font>";
             return result;
         }
     }

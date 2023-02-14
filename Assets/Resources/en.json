@@ -29,9 +29,11 @@
     },
     "UI": {
         "btn_play": "play",
-        "btn_change_language": "change language",
+        "btn_change_language": "Русский",
+        "btn_exit": "exit",
         "hint_full": "full",
         "hint_deactivate": "too big",
+        "hint_click_to_close": "click to close",
         "slime_slipperiness": "slipperiness: {0}",
         "slime_sweetness": "sweetness: {0}"
     }
