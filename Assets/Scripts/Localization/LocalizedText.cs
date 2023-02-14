@@ -37,5 +37,10 @@ namespace Localization
             }
             _textMeshPro.text = Localization.GetValueByKey(localizationGroup, localizationKey);
         }
+
+        private void OnDestroy()
+        {
+            Localization.LoadLocalized -= GetTextValue;
+        }
     }
 }

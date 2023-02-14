@@ -730,8 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669d1a4f750c4487ba6face8e2c44650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  additiveScenes:
-  - HUD
+  additiveScenes: []
 --- !u!1 &800338025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1159,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2

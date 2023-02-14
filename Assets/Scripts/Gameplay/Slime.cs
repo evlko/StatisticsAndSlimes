@@ -48,6 +48,11 @@ namespace Gameplay
             LevelManager.LevelCompleted += Jump;
         }
 
+        private void OnDestroy()
+        {
+            LevelManager.LevelCompleted -= Jump;
+        }
+
         private void Jump()
         {
             if (_animator != null)

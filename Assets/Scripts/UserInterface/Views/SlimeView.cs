@@ -45,5 +45,12 @@ namespace Views
             _slimeData = null;
             ActivateView(false);
         }
+
+        private void OnDestroy()
+        {
+            Slime.ShowSlimeData -= ShowSlimeView;
+            Slime.SlimeFeatureChanged -= UpdateSlimeView;
+            Slime.HideSlimeData -= HideSlimeView;
+        }
     }
 }

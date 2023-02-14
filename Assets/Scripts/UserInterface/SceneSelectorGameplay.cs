@@ -14,5 +14,10 @@ namespace UserInterface
         {
             this.gameObject.SetActive(true);
         }
+
+        private void OnDestroy()
+        {
+            LevelManager.LevelCompleted -= ShowButton;
+        }
     }
 }

@@ -37,6 +37,12 @@ namespace Gameplay
             ShowLevelData?.Invoke(_levelData);
         }
 
+        private void OnDestroy()
+        {
+            SlimePool.SlimesPoolChanged -= CheckConditions;
+            Slime.SlimeFeatureChanged -= CheckConditions;
+        }
+
         private void CheckConditions()
         {
             if (ConditionsTracker.AllConditionsAreSatisfied(SlimePool.ActiveSlimes, _levelData.conditions))

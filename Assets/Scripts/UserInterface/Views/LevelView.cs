@@ -22,5 +22,10 @@ namespace Views
                 levelText.LocalizationKey = levelData.levelKey;
             }
         }
+
+        private void OnDestroy()
+        {
+            LevelManager.ShowLevelData -= ShowLevelView;
+        }
     }
 }
