@@ -6,7 +6,7 @@ namespace UserInterface
     {
         private void Awake()
         {
-            LevelManager.LevelCompleted += ShowButton;
+            PlaygroundManager.LevelCompleted += ShowButton;
             this.gameObject.SetActive(false);
         }
         
@@ -17,7 +17,7 @@ namespace UserInterface
 
         private void OnDestroy()
         {
-            LevelManager.LevelCompleted -= ShowButton;
+            PlaygroundManager.LevelCompleted -= ShowButton;
         }
     }
 }

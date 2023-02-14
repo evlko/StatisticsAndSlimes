@@ -55,6 +55,7 @@ namespace Localization
         LevelTheory,
         PythonHint,
         TableHint,
-        UI
+        UI,
+        ArenaTask
     }
 }

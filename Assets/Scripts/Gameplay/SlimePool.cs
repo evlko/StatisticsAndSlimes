@@ -30,8 +30,6 @@ namespace Gameplay
 
         public void BuildPool(List<SlimeData> storedSlimes, List<SlimeData> activeSlimes)
         {
-            Debug.Log("Building pool...");
-            
             _storedSlimes.Clear();
             _activeSlimes.Clear();
 
@@ -40,6 +38,17 @@ namespace Gameplay
                 var instantiatedSlime = InstantiateSlime(slimeData);
                 _storedSlimes.Add(instantiatedSlime);
             }
+
+            foreach (var slimeData in activeSlimes)
+            {
+                var instantiatedSlime = InstantiateSlime(slimeData);
+                ActivateSlime(instantiatedSlime);
+            }
+        }
+        
+        public void BuildPool(List<SlimeData> activeSlimes)
+        {
+            _activeSlimes.Clear();
 
             foreach (var slimeData in activeSlimes)
             {

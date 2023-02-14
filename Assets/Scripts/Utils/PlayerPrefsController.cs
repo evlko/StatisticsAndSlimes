@@ -4,9 +4,9 @@ namespace Utils
 {
     public class PlayerPrefsController : MonoBehaviour
     {
-        public void SetPlayerPrefValue(string prefName)
+        public void ClearAllPlayerPrefs()
         {
-            PlayerPrefs.SetInt(prefName, 0);
+            PlayerPrefs.DeleteAll();
         }
     }
 }

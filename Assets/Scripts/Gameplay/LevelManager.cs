@@ -1,58 +1,53 @@
 using System;
-using UnityEngine;
 using Models;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField] private ChapterData chapterData;
-        [SerializeField] private SlimePool slimePool;
-        [SerializeField] private LevelBuilder levelBuilder;
-        
-        private LevelData _levelData;
-        private int _currentLevel;
+        [SerializeField] protected SlimePool slimePool;
+        [SerializeField] protected ChapterData chapterData;
 
+        protected int CurrentLevel;
+        private string _chapterName;
+        
         public static Action<LevelData> ShowLevelData;
         public static Action LevelCompleted;
 
-        private void Awake()
+        protected void Awake()
         {
-            if (!PlayerPrefs.HasKey("Level"))
+            _chapterName = chapterData.chapterName;
+            
+            if (!PlayerPrefs.HasKey(_chapterName))
             {
-                PlayerPrefs.SetInt("Level", 0);
+                PlayerPrefs.SetInt(_chapterName, 0);
             }
 
-            _currentLevel = PlayerPrefs.GetInt("Level");
-            
-            _levelData = chapterData.levels[_currentLevel];
-            
-            slimePool.BuildPool(_levelData.initialStoredSlimes, _levelData.initialActiveSmiles);
-            levelBuilder.BuildLevel(_levelData.interactionObjects);
-            
-            // TODO: it's better to try one more time to implement kinda ICondition interface
-            SlimePool.SlimesPoolChanged += CheckConditions;
-            Slime.SlimeFeatureChanged += CheckConditions;
-            
-            ShowLevelData?.Invoke(_levelData);
-        }
+            CurrentLevel = PlayerPrefs.GetInt(_chapterName);
 
-        private void OnDestroy()
-        {
-            SlimePool.SlimesPoolChanged -= CheckConditions;
-            Slime.SlimeFeatureChanged -= CheckConditions;
-        }
-
-        private void CheckConditions()
-        {
-            if (ConditionsTracker.AllConditionsAreSatisfied(SlimePool.ActiveSlimes, _levelData.conditions))
+            if (CurrentLevel >= chapterData.levels.Count)
             {
-                SlimePool.SlimesPoolChanged -= CheckConditions;
-                Slime.SlimeFeatureChanged -= CheckConditions;
-                _currentLevel += 1;
-                PlayerPrefs.SetInt("Level", _currentLevel);
-                LevelCompleted?.Invoke();
-            };
+                PlayerPrefs.SetInt(_chapterName, 0);
+                SceneManager.LoadScene("MainMenu");
+            }
+            else
+            {
+                InitLevel();
+            }
+        }
+
+        protected virtual void InitLevel()
+        {
+            
+        }
+
+        protected void CompleteLevel()
+        {
+            CurrentLevel += 1;
+            PlayerPrefs.SetInt(_chapterName, CurrentLevel);
+            LevelCompleted?.Invoke();
         }
     }
 }
