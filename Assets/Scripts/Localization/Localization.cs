@@ -17,7 +17,7 @@ namespace Localization
         {
             if (!PlayerPrefs.HasKey("Language"))
             {
-                PlayerPrefs.SetString("Language", "en");
+                PlayerPrefs.SetString("Language", "ru");
             }
             _currentLanguage = PlayerPrefs.GetString("Language");
             LoadLocalizationMap(_currentLanguage);
