@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2830383328213450121}
   - component: {fileID: 1573957825}
   m_Layer: 0
-  m_Name: Dyer
+  m_Name: OrangeDyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4969b9b5e548143a29a3cbd98a10634f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {fileID: 11400000, guid: 7b0203d246af54498b91ca33fa0dbaa3, type: 2}
+  color: {fileID: 11400000, guid: 3f4e2f00bf6534172ae9fced9fa7654c, type: 2}
 --- !u!114 &1573957825
 MonoBehaviour:
   m_ObjectHideFlags: 0

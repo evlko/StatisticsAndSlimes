@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6334de5c31ed0475f9208d655f363cdc, type: 3}
-  m_Name: Slime 2
+  m_Name: Slime Level 3 1
   m_EditorClassIdentifier: 
-  slimeName: Name 2
-  color: {fileID: 11400000, guid: a7d484a3c13934a9eab203f9bb6bf495, type: 2}
+  slimeName: Slimeer
+  color: {fileID: 11400000, guid: c53f13126a3bf4c468f6bbde405cc6bf, type: 2}
   quantitativeFeature:
   - slimeQuantitativeFeature: 0
-    value: 30
+    value: 999
   - slimeQuantitativeFeature: 1
-    value: 0
-  body: {fileID: 21300000, guid: 6654bf86a5c5a4f3e8d219652ed33b88, type: 3}
+    value: 15
+  body: {fileID: 21300000, guid: 271ce43ed853d4546af87a91062a3ac4, type: 3}

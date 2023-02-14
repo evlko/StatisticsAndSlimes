@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6334de5c31ed0475f9208d655f363cdc, type: 3}
   m_Name: Slime 3
   m_EditorClassIdentifier: 
-  slimeName: Name 3
+  slimeName: Slimex
   color: {fileID: 11400000, guid: 7b0203d246af54498b91ca33fa0dbaa3, type: 2}
   quantitativeFeature:
   - slimeQuantitativeFeature: 0
