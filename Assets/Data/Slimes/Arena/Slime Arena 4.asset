@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6334de5c31ed0475f9208d655f363cdc, type: 3}
   m_Name: Slime Arena 4
   m_EditorClassIdentifier: 
-  slimeName: Slimen
-  color: {fileID: 11400000, guid: db8355bc81d564394959ec5aeed65bfd, type: 2}
+  slimeName: Slima
+  color: {fileID: 11400000, guid: 3f4e2f00bf6534172ae9fced9fa7654c, type: 2}
   quantitativeFeature:
   - slimeQuantitativeFeature: 0
-    value: 10
-  - slimeQuantitativeFeature: 0
-    value: 15
-  body: {fileID: 21300000, guid: 84fea334af4cf4dd2ab0631959106159, type: 3}
+    value: 50
+  - slimeQuantitativeFeature: 1
+    value: 18
+  body: {fileID: 21300000, guid: 6654bf86a5c5a4f3e8d219652ed33b88, type: 3}

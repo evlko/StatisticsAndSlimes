@@ -22,7 +22,7 @@ namespace Gameplay
                 _currentHealth = PlayerPrefs.GetInt("ArenaHealth");
             }
             
-            _arenaLevelData = (ArenaLevelData) chapterData.levels[CurrentLevel];
+            _arenaLevelData = Instantiate((ArenaLevelData) chapterData.levels[CurrentLevel]);
             
             slimePool.BuildPool(_arenaLevelData.slimes);
             

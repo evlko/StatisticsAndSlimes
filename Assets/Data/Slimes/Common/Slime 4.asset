@@ -18,5 +18,5 @@ MonoBehaviour:
   - slimeQuantitativeFeature: 0
     value: 50
   - slimeQuantitativeFeature: 1
-    value: 0
+    value: 5
   body: {fileID: 21300000, guid: 4b33d1bddc526415dbf8a9e0f0bb6d96, type: 3}

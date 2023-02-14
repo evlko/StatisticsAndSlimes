@@ -16,10 +16,12 @@ MonoBehaviour:
   initialActiveSmiles:
   - {fileID: 11400000, guid: 392d7778c8069496385d2ad520cf5349, type: 2}
   - {fileID: 11400000, guid: 1ce657bfa558a4b35b5c8d1fe7cb6d83, type: 2}
+  - {fileID: 11400000, guid: d3c7c762889f74ec39e2034e17349edf, type: 2}
+  - {fileID: 11400000, guid: 7e4814599a27b48269245c014e994444, type: 2}
   initialStoredSlimes:
-  - {fileID: 11400000, guid: 9c753fc691648427ab4db2b4a7de69d2, type: 2}
   - {fileID: 11400000, guid: 183178127b70c453c93182a99a646819, type: 2}
   conditions:
   - {fileID: 11400000, guid: c9267a9d53bfe4f41acfd252eb45bdfb, type: 2}
   interactionObjects:
-  - {fileID: 6371193984893785802, guid: 7d857576cd3bb4e93b98b7868df54602, type: 3}
+  - {fileID: 8714449698432580152, guid: 8e77c2137c48f4a57b35c844e0b61571, type: 3}
+  - {fileID: 8714449698432580152, guid: 5f046089c91bb4b6ea859e9a5f48d225, type: 3}

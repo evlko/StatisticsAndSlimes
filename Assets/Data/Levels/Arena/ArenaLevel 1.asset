@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelKey: level_1
   slimes:
-  - {fileID: 11400000, guid: 392d7778c8069496385d2ad520cf5349, type: 2}
-  result: 10
+  - {fileID: 11400000, guid: 70ee36bb31db44e98a0f081cf1505135, type: 2}
+  - {fileID: 11400000, guid: e498a0e755ed64f93ac29ae3a6130821, type: 2}
+  - {fileID: 11400000, guid: fec58c0560f504c96bade3acc75360ed, type: 2}
+  - {fileID: 11400000, guid: ca17f73516f654a7cba4c4017f9efb73, type: 2}
+  - {fileID: 11400000, guid: 2206a2b36c7ab493baec411224b0620d, type: 2}
+  result: 26

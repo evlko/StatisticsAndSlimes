@@ -11,7 +11,7 @@ namespace Gameplay
 
         protected override void InitLevel()
         {
-            _playgroundLevelData = (PlaygroundLevelData) chapterData.levels[CurrentLevel];
+            _playgroundLevelData = Instantiate((PlaygroundLevelData) chapterData.levels[CurrentLevel]);
             
             slimePool.BuildPool(_playgroundLevelData.initialStoredSlimes, _playgroundLevelData.initialActiveSmiles);
             levelBuilder.BuildLevel(_playgroundLevelData.interactionObjects);

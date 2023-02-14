@@ -26,7 +26,7 @@ namespace Gameplay
 
         public void Init(SlimeData slimeData, SlimePool slimePool)
         {
-            _slimeData = slimeData;
+            _slimeData = Instantiate(slimeData);
             _slimePool = slimePool;
 
             _spriteRenderer.sprite = _slimeData.body;
