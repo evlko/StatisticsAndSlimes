@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0af58319f2049cbb081f1bc2889522, type: 3}
+  m_Name: ArenaLevel 4
+  m_EditorClassIdentifier: 
+  levelKey: level_4
+  slimes:
+  - {fileID: 11400000, guid: 70ee36bb31db44e98a0f081cf1505135, type: 2}
+  - {fileID: 11400000, guid: e498a0e755ed64f93ac29ae3a6130821, type: 2}
+  - {fileID: 11400000, guid: fec58c0560f504c96bade3acc75360ed, type: 2}
+  - {fileID: 11400000, guid: ca17f73516f654a7cba4c4017f9efb73, type: 2}
+  - {fileID: 11400000, guid: 2206a2b36c7ab493baec411224b0620d, type: 2}
+  result: 30
