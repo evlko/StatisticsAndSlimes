@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playgroundCharacteristicsTypes: 0
   slimesCharacteristics: 0
-  characteristicType: 0
+  characteristicType: 1
   sampleCharacteristic: 0
   featureType: 0
-  slimeQuantitativeFeature: 0
-  quantitativeFeatureCharacteristic: 0
+  slimeQuantitativeFeature: 1
+  quantitativeFeatureCharacteristic: 1
   slimeCategoricalFeature: 0
   categoricalFeatureCharacteristic: 0
-  value: 0
+  value: 20
   aliveSlimes: []
   certainSlimes: []
