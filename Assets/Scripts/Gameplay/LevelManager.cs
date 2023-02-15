@@ -30,7 +30,7 @@ namespace Gameplay
 
             if (CurrentLevel >= chapterData.levels.Count)
             {
-                PlayerPrefs.SetInt(_chapterName, 0);
+                ChapterCleared();
                 SceneManager.LoadScene("MainMenu");
             }
             else
@@ -49,6 +49,11 @@ namespace Gameplay
             CurrentLevel += 1;
             PlayerPrefs.SetInt(_chapterName, CurrentLevel);
             LevelCompleted?.Invoke();
+        }
+
+        protected void ChapterCleared()
+        {
+            PlayerPrefs.SetInt(_chapterName, 0);
         }
     }
 }

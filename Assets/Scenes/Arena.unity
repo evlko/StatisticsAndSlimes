@@ -3013,6 +3013,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8355274882737189321, guid: d6b8d1fc3ea4d4b898e99b14630e91d8, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355274882737189321, guid: d6b8d1fc3ea4d4b898e99b14630e91d8, type: 3}
       propertyPath: slimePool
       value: 
       objectReference: {fileID: 3633849920860458363}

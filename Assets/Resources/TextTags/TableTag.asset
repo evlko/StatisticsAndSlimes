@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: table
   textColor: {r: 0.14509805, g: 0.78039217, b: 0.3018927, a: 1}
-  backgroundColor: {r: 0.9764706, g: 0.9490196, b: 0.95686275, a: 0.5882353}
+  backgroundColor: {r: 0.9764706, g: 0.9490196, b: 0.95686275, a: 0.39215687}
   fontName: JetBrainsMono-VariableFont_wght SDF
