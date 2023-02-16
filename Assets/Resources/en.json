@@ -47,6 +47,9 @@
         "slime_slipperiness": "slipperiness: {0}",
         "slime_sweetness": "sweetness: {0}",
         "arena_description": "super puper arena",
-        "arena_answer": "answer..."
+        "arena_answer": "answer...",
+        "python_master": "Python Master",
+        "tables_master": "Tables Master",
+        "grandpa": "Grandpa"
     }
 }

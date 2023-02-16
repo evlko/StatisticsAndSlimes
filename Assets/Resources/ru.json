@@ -47,6 +47,9 @@
         "slime_slipperiness": "слизкость: {0}",
         "slime_sweetness": "сладкость: {0}",
         "arena_description": "<important>Арена</important> — место, в котором ты можешь проверить свои силы. Это больше не площадка, тут с данными играться не получится. <warning>Теперь всё как в реальной жизни</warning>. Есть <important>выборка</important>, по ней требуется <important>что-то найти</important>. \n\nЗа каждый неправильный ответ ты будешь терять <warning>здоровье</warning>. Когда оно опустится до нуля, то… всё.",
-        "arena_answer": "ответ..."
+        "arena_answer": "ответ...",
+        "python_master": "Python Мастер",
+        "tables_master": "Мастер по Таблицам",
+        "grandpa": "Дедушка"
     }
 }
