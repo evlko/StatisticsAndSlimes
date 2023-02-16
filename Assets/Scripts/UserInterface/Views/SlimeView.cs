@@ -33,7 +33,7 @@ namespace Views
         private void UpdateSlimeView()
         {
             if (!_slimeData) return;
-            slimeNameText.text = _slimeData.slimeName;
+            slimeNameText.text = _slimeData.SlimeName;
             statSlipperinessText.text = String.Format(statSlipperinessText.text,
                 _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Slipperiness]);
             statSweetnessText.text = String.Format(statSweetnessText.text,

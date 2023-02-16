@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Gameplay;
 using UnityEngine;
 
 namespace Models
@@ -9,17 +8,24 @@ namespace Models
     public class SlimeData : ScriptableObject
     {
         [Header("Categorical Features")]
-        public string slimeName;
-        public ColorData color;
+        [SerializeField] private string slimeName;
+        [SerializeField] private ColorData color;
         [Header("Quantitative Features")]
-        public List<QuantitativeFeature> quantitativeFeature;
+        [SerializeField] private List<QuantitativeFeature> quantitativeFeature;
         [Header("Visualization")] 
-        public Sprite body;
+        [SerializeField] private Sprite body;
+
+        public string SlimeName => slimeName;
+        public ColorData Color => color;
+        public Sprite Body => body;
 
         [Serializable] public struct QuantitativeFeature
         {
-            public SlimeQuantitativeFeatures slimeQuantitativeFeature;
-            public float value;
+            [SerializeField] private SlimeQuantitativeFeatures slimeQuantitativeFeature;
+            [SerializeField] private float value;
+
+            public SlimeQuantitativeFeatures SlimeCategoricalFeatures => slimeQuantitativeFeature;
+            public float Value => value;
         }
 
         public readonly Dictionary<SlimeQuantitativeFeatures, float> QuantitativeFeatures = new Dictionary<SlimeQuantitativeFeatures, float>();
@@ -29,7 +35,7 @@ namespace Models
         {
             foreach (var feature in quantitativeFeature)
             {
-                QuantitativeFeatures[feature.slimeQuantitativeFeature] = feature.value;
+                QuantitativeFeatures[feature.SlimeCategoricalFeatures] = feature.Value;
             }
 
             CategoricalFeatures[SlimeCategoricalFeatures.Color] = color.color.ToString();
@@ -59,9 +65,6 @@ namespace Models
             {
                 if (this.CategoricalFeatures[key] != otherData.CategoricalFeatures[key])
                 {
-                    Debug.Log(key);
-                    Debug.Log(this.CategoricalFeatures[key]);
-                    Debug.Log(otherData.CategoricalFeatures[key]);
                     return false;
                 }
             }

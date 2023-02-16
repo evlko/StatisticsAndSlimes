@@ -29,8 +29,8 @@ namespace Gameplay
             _slimeData = Instantiate(slimeData);
             _slimePool = slimePool;
 
-            _spriteRenderer.sprite = _slimeData.body;
-            _currentColor = _slimeData.color.color;
+            _spriteRenderer.sprite = _slimeData.Body;
+            _currentColor = _slimeData.Color.color;
 
             Color(_currentColor);
             UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Sweetness);
