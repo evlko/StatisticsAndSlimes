@@ -126,5 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff03be3bbb59b4cd19cf7b01b5ed586b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseHintKey: empty
   draggableStatModifier: {fileID: 6371193984893785802, guid: 13854c239106840639ab9a68954d7a41, type: 3}
   poolPosition: {fileID: 7015017034902431015}

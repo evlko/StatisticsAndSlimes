@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8ab264d15d04ced90a9fe3e6611d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintKey: hint_well
 --- !u!114 &5355444719297684384
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,14 +19,20 @@ namespace Gameplay
         [SerializeField] private string hintStoredIsEmpty;
         [SerializeField] private string hintRemoveRejected;
 
+        private Hint _hint;
+        
         private static List<Slime> _storedSlimes = new List<Slime>();
         private static List<Slime> _activeSlimes = new List<Slime>();
 
         public static Action SlimesPoolChanged;
-        public static Action<string> ShowPoolHint;
 
         public static List<Slime> ActiveSlimes => _activeSlimes;
         public static List<Slime> StoredSlimes => _storedSlimes;
+
+        private void Awake()
+        {
+            _hint = this.gameObject.AddComponent<Hint>();
+        }
 
         public void BuildPool(List<SlimeData> storedSlimes, List<SlimeData> activeSlimes)
         {
@@ -71,7 +77,7 @@ namespace Gameplay
             {
                 if (_storedSlimes.Count <= 0)
                 {
-                    ShowPoolHint?.Invoke(hintStoredIsEmpty);
+                    _hint.ShowHint(hintStoredIsEmpty, 3);
                     return;
                 }
                 pickedSlime = _storedSlimes[0];
@@ -94,7 +100,7 @@ namespace Gameplay
         {
             if (s.SlimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness] >= GameplayConsts.SlimeMaxSweetnessForDestroy)
             { 
-                ShowPoolHint?.Invoke(hintRemoveRejected);
+                _hint.ShowHint(hintRemoveRejected, 3);
                 return;
             }
             

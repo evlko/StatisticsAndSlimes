@@ -44,12 +44,12 @@ namespace Gameplay
             _animator = this.GetComponentInChildren<Animator>();
             _dragging = this.gameObject.AddComponent<Dragging>();
 
-            PlaygroundManager.LevelCompleted += Jump;
+            LevelManager.LevelCompleted += Jump;
         }
 
         private void OnDestroy()
         {
-            PlaygroundManager.LevelCompleted -= Jump;
+            LevelManager.LevelCompleted -= Jump;
         }
 
         private void Jump()

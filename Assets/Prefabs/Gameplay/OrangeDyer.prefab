@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4969b9b5e548143a29a3cbd98a10634f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintKey: hint_dyer
   color: {fileID: 11400000, guid: 3f4e2f00bf6534172ae9fced9fa7654c, type: 2}
 --- !u!114 &1573957825
 MonoBehaviour:

@@ -15,8 +15,10 @@ namespace Gameplay
             set => _backPosition = value;
         }
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+            
             _spriteRenderer = this.GetComponent<SpriteRenderer>();
             _transform = transform.GetComponent<Transform>();
             _dragging = this.gameObject.AddComponent<Dragging>();

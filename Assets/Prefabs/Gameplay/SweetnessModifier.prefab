@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ef3efea80e4486998d5063c514d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintKey: hint_modifier_sweetness
   modifiedQuantitativeFeature: 0
   value: 5
 --- !u!114 &1285207839

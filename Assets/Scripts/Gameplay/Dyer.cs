@@ -6,12 +6,15 @@ namespace Gameplay
 {
     public class Dyer : InteractionObject
     {
+        [Header("Dyer")]
         [SerializeField] private ColorData color;
         private Color _color;
         private SpriteRenderer _spriteRenderer;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+            
             _spriteRenderer = this.GetComponent<SpriteRenderer>();
             _color = color.color;
             _spriteRenderer.color = _color;
