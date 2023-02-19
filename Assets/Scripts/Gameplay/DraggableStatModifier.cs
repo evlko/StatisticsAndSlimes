@@ -30,13 +30,6 @@ namespace Gameplay
             // TODO: map new color with stats if there is no then default (current)
         }
 
-        public void Color(float alpha)
-        {
-            var currentColor = _spriteRenderer.color;
-            currentColor.a = alpha;
-            _spriteRenderer.color = currentColor;
-        }
-
         protected override void Interact(Transform t)
         {
             if (_dragging.isDragging) return;

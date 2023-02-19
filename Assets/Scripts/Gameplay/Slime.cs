@@ -13,7 +13,6 @@ namespace Gameplay
         private Dragging _dragging;
         private Transform _transform;
         private SpriteRenderer _spriteRenderer;
-        private Color _currentColor;
 
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
         private static readonly int Slipperiness = Animator.StringToHash("slipperiness");
@@ -30,9 +29,8 @@ namespace Gameplay
             _slimePool = slimePool;
 
             _spriteRenderer.sprite = _slimeData.Body;
-            _currentColor = _slimeData.Color.color;
 
-            Color(_currentColor);
+            Color(_slimeData.Color.color);
             UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Sweetness);
             UpdateQuantitativeFeatureView(SlimeQuantitativeFeatures.Slipperiness);
         }
@@ -76,14 +74,7 @@ namespace Gameplay
         public void Color(Color color)
         {
             _spriteRenderer.color = color;
-            _currentColor = color;
             UpdateSlimeCategoricalFeature(SlimeCategoricalFeatures.Color, color.ToString());
-        }
-
-        public void Color(float alpha)
-        {
-            _currentColor.a = alpha;
-            _spriteRenderer.color = _currentColor;
         }
 
         public void Destroy()

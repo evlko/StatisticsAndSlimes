@@ -5,7 +5,6 @@ namespace Gameplay
 {
     public class Dragging : MonoBehaviour
     {
-        private IColorable _colorable;
         private Collider2D _collider;
         private Animator _animator;
         private bool _isDragging = false;
@@ -18,7 +17,6 @@ namespace Gameplay
 
         private void Awake()
         {
-            _colorable = this.gameObject.GetComponent<IColorable>();
             _collider = this.gameObject.GetComponent<Collider2D>();
             _animator = this.gameObject.GetComponentInChildren<Animator>();
         }
@@ -27,7 +25,6 @@ namespace Gameplay
         {
             _collider.isTrigger = true;
             _isDragging = true;
-            _colorable?.Color(0.5f);
             _animator.SetBool(IsDragging, true);
         }
 
@@ -41,7 +38,6 @@ namespace Gameplay
         {
             _collider.isTrigger = false;
             _isDragging = false;
-            _colorable?.Color(1f);
             _animator.SetBool(IsDragging, false);
         }
     }
