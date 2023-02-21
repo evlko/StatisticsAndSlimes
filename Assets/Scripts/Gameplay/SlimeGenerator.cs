@@ -13,6 +13,7 @@ namespace Gameplay
         private void Awake()
         {
             _spriteRenderer = this.GetComponent<SpriteRenderer>();
+            SlimePool.SlimesPoolChanged += CheckPool;
         }
 
         private void Start()
@@ -23,12 +24,16 @@ namespace Gameplay
         private void OnMouseDown()
         {
             slimePool.ActivateSlime();
-            CheckPool();
         }
 
         private void CheckPool()
         {
             _spriteRenderer.sprite = SlimePool.StoredSlimes.Count == 0 ? emptyPool : notEmptyPool;
+        }
+
+        private void OnDestroy()
+        {
+            SlimePool.SlimesPoolChanged -= CheckPool;
         }
     }
 }
