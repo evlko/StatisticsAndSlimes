@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   levelKey: level_2
-  initialActiveSmiles:
+  initialActiveSmiles: []
+  initialStoredSlimes:
   - {fileID: 11400000, guid: 392d7778c8069496385d2ad520cf5349, type: 2}
   - {fileID: 11400000, guid: 183178127b70c453c93182a99a646819, type: 2}
   - {fileID: 11400000, guid: 1ce657bfa558a4b35b5c8d1fe7cb6d83, type: 2}
   - {fileID: 11400000, guid: 9c753fc691648427ab4db2b4a7de69d2, type: 2}
-  initialStoredSlimes: []
+  - {fileID: 11400000, guid: 7e4814599a27b48269245c014e994444, type: 2}
   conditions:
-  - {fileID: 11400000, guid: 14cd251b00cd64ec09468856921f0d18, type: 2}
+  - {fileID: 11400000, guid: 5df7a8884fead474db6aab4bec55f2b1, type: 2}
   interactionObjects: []

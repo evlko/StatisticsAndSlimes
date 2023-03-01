@@ -13,12 +13,30 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   levelKey: level_1
-  initialActiveSmiles:
-  - {fileID: 11400000, guid: 392d7778c8069496385d2ad520cf5349, type: 2}
+  initialActiveSmiles: []
   initialStoredSlimes:
+  - {fileID: 11400000, guid: 70ee36bb31db44e98a0f081cf1505135, type: 2}
+  - {fileID: 11400000, guid: e498a0e755ed64f93ac29ae3a6130821, type: 2}
+  - {fileID: 11400000, guid: fec58c0560f504c96bade3acc75360ed, type: 2}
+  - {fileID: 11400000, guid: ca17f73516f654a7cba4c4017f9efb73, type: 2}
+  - {fileID: 11400000, guid: 2206a2b36c7ab493baec411224b0620d, type: 2}
+  - {fileID: 11400000, guid: 392d7778c8069496385d2ad520cf5349, type: 2}
   - {fileID: 11400000, guid: 183178127b70c453c93182a99a646819, type: 2}
   - {fileID: 11400000, guid: 1ce657bfa558a4b35b5c8d1fe7cb6d83, type: 2}
   - {fileID: 11400000, guid: 9c753fc691648427ab4db2b4a7de69d2, type: 2}
+  - {fileID: 11400000, guid: 7e4814599a27b48269245c014e994444, type: 2}
+  - {fileID: 11400000, guid: d3c7c762889f74ec39e2034e17349edf, type: 2}
+  - {fileID: 11400000, guid: 07e894409218f49b1a843f836a4739b2, type: 2}
+  - {fileID: 11400000, guid: 003af36072df34cdbb3a38fc2aef20a6, type: 2}
+  - {fileID: 11400000, guid: a00013661ce5541d5bd5f639f11b4ae4, type: 2}
+  - {fileID: 11400000, guid: 1eb978c5bf72545938865ad9d5c7aae9, type: 2}
+  - {fileID: 11400000, guid: 26c00d34569634b66afce1936041d793, type: 2}
+  - {fileID: 11400000, guid: 2284146ad3da54f88b123c214b2aff8e, type: 2}
+  - {fileID: 11400000, guid: fbe74d897b1d548b98f34f2fe513cdbb, type: 2}
+  - {fileID: 11400000, guid: 196352a4ad20344c39c6042b47e8d9d2, type: 2}
+  - {fileID: 11400000, guid: 1b49421f0ea5e4330953bea83ba4e0b2, type: 2}
+  - {fileID: 11400000, guid: bdd20ceed454c4443966938a46578745, type: 2}
+  - {fileID: 11400000, guid: 6142422143b8749a6bb4d53a8f726b4f, type: 2}
   conditions:
   - {fileID: 11400000, guid: b98df4c131d50407e99780dba8d758bc, type: 2}
   interactionObjects: []

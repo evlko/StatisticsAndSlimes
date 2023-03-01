@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f8e3238c7a9a4d21a0031ca5cd3825e, type: 3}
-  m_Name: Condition 2
+  m_Name: Condition Size 1
   m_EditorClassIdentifier: 
+  playgroundCharacteristicsTypes: 0
+  slimesCharacteristics: 0
   characteristicType: 0
   sampleCharacteristic: 0
   featureType: 0
@@ -19,4 +21,6 @@ MonoBehaviour:
   quantitativeFeatureCharacteristic: 0
   slimeCategoricalFeature: 0
   categoricalFeatureCharacteristic: 0
-  value: 0
+  value: 1
+  aliveSlimes: []
+  certainSlimes: []

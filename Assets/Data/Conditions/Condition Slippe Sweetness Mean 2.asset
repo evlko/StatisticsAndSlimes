@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f8e3238c7a9a4d21a0031ca5cd3825e, type: 3}
-  m_Name: Condition 1
+  m_Name: Condition Slippe Sweetness Mean 2
   m_EditorClassIdentifier: 
   playgroundCharacteristicsTypes: 0
   slimesCharacteristics: 0
-  characteristicType: 0
-  sampleCharacteristic: 0
-  featureType: 1
-  slimeQuantitativeFeature: 0
-  quantitativeFeatureCharacteristic: 1
+  characteristicType: 1
+  sampleCharacteristic: 1
+  featureType: 0
+  slimeQuantitativeFeature: 1
+  quantitativeFeatureCharacteristic: 0
   slimeCategoricalFeature: 0
   categoricalFeatureCharacteristic: 0
-  value: 4
+  value: 15
   aliveSlimes: []
   certainSlimes: []

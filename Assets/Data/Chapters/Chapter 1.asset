@@ -15,7 +15,6 @@ MonoBehaviour:
   chapterName: ChapterOne
   levels:
   - {fileID: 11400000, guid: 8ec52d601fb894ba88e59c7f05a17bd2, type: 2}
+  - {fileID: 11400000, guid: 304dec69800f14da8a094a7f94728e9c, type: 2}
   - {fileID: 11400000, guid: 3bdfa69f140644a93a5b29ebb46cbade, type: 2}
   - {fileID: 11400000, guid: fc24fde417e7743cc86fa19a12fa3de0, type: 2}
-  - {fileID: 11400000, guid: 8b7ff620ff68341d3b056e871c88b647, type: 2}
-  - {fileID: 11400000, guid: a69b31d4788cf4051926ddcfc65638a2, type: 2}
