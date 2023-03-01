@@ -18,6 +18,15 @@ namespace Localization
             }
         }
 
+        public LocalizationGroup LocalizationGroup
+        {
+            set
+            {
+                localizationGroup = value;
+                GetTextValue();
+            }
+        }
+
         private void Awake()
         {
             _textMeshPro = this.GetComponent<TextMeshProUGUI>();

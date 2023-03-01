@@ -56,6 +56,7 @@ namespace Localization
         PythonHint,
         TableHint,
         UI,
-        ArenaTask
+        ArenaTask,
+        LevelCompleted,
     }
 }
