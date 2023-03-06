@@ -7,9 +7,10 @@ namespace Models
     [CreateAssetMenu(fileName = "Slime", menuName = "ScriptableObjects/Slime", order = 1)]
     public class SlimeData : ScriptableObject
     {
-        [Header("Categorical Features")]
         [SerializeField] private string slimeName;
+        [Header("Categorical Features")]
         [SerializeField] private ColorData color;
+        [SerializeField] private SlimeType slimeType;
         [Header("Quantitative Features")]
         [SerializeField] private List<QuantitativeFeature> quantitativeFeature;
         [Header("Visualization")] 
@@ -39,6 +40,7 @@ namespace Models
             }
 
             CategoricalFeatures[SlimeCategoricalFeatures.Color] = color.color.ToString();
+            CategoricalFeatures[SlimeCategoricalFeatures.Type] = slimeType.ToString();
         }
 
         public bool Equals(SlimeData otherData)
@@ -81,6 +83,13 @@ namespace Models
 
     public enum SlimeCategoricalFeatures
     {
-        Color
+        Color,
+        Type
+    }
+
+    public enum SlimeType
+    {
+        Domestic,
+        Wild
     }
 }
