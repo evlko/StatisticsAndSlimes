@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8e3238c7a9a4d21a0031ca5cd3825e, type: 3}
+  m_Name: Condition Sweetness Mean 2
+  m_EditorClassIdentifier: 
+  playgroundCharacteristicsTypes: 0
+  slimesCharacteristics: 0
+  characteristicType: 1
+  sampleCharacteristic: 1
+  featureType: 0
+  slimeQuantitativeFeature: 0
+  quantitativeFeatureCharacteristic: 0
+  slimeCategoricalFeature: 0
+  categoricalFeatureCharacteristic: 0
+  value: 2
+  aliveSlimes: []
+  certainSlimes: []

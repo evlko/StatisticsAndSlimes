@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slimeName: Slimy
   color: {fileID: 11400000, guid: a7d484a3c13934a9eab203f9bb6bf495, type: 2}
+  slimeType: 1
   quantitativeFeature:
   - slimeQuantitativeFeature: 0
     value: 50

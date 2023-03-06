@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f8e3238c7a9a4d21a0031ca5cd3825e, type: 3}
-  m_Name: Condition Slipperiness Median 20
+  m_Name: Condition Colors 5
   m_EditorClassIdentifier: 
   playgroundCharacteristicsTypes: 0
   slimesCharacteristics: 0
   characteristicType: 1
   sampleCharacteristic: 0
-  featureType: 0
-  slimeQuantitativeFeature: 1
-  quantitativeFeatureCharacteristic: 1
+  featureType: 1
+  slimeQuantitativeFeature: 0
+  quantitativeFeatureCharacteristic: 0
   slimeCategoricalFeature: 0
   categoricalFeatureCharacteristic: 0
-  value: 20
+  value: 5
   aliveSlimes: []
   certainSlimes: []
