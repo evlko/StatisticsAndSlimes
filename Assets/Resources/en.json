@@ -3,7 +3,7 @@
         "level_1": "Try to get a general population of slimes",
         "level_2": "Get the maximum sample of slimes",
         "level_3": "Minimize the sample",
-        "level_4": "Leave only the slimes of that color whose number matches the number of features",
+        "level_4": "Leave only slimes of that color whose number matches the number of features",
         "level_5": "Leave a slime with unique values of categorical features",
         "level_6": "Leave a slime with the maximum sum of quantitative features",
         "level_7": "Make the average slipperiness be 15",
@@ -27,12 +27,12 @@
         "level_1": "Getting the entire <important>general population</important>, of course, is simply <important>impossible</important> because it is often very large!",
         "level_2": "That's the right amount to work with! We'll figure out how much we really need later.",
         "level_3": "As a reminder, we do not yet undertake to evaluate the <important>representativeness</important> of the sample, but we will soon do so.",
-        "level_4": "That's right, slimes have a total of 4 features:\n1. color;\n2. type;\n3. sweetness;\n4. slipperiness.\nIt is important to understand that the name is not a feature. It is, rather, an identifier.",
+        "level_4": "That's right, slimes have 4 features:\n1. color;\n2. type;\n3. sweetness;\n4. slipperiness.\nIt is important to understand that the name is not a feature. It is rather an identifier.",
         "level_5": "Right choice. There are 2 <important>categorical</important> features of slimes 2: color and type.",
         "level_6": "Right choice. There are 2 <important>quantitative</important> features of slimes 2: sweetness and slipperiness.",
         "level_7": "If a feature takes <important>extreme values</important>, that is, abnormally large or small, the average may \"shift\" in their direction and should not be used.",
         "level_8": "It is worth counting both the median and the mean to better understand how a feature works in practice.",
-        "level_9": "Moda can also be counted for <important>quantitative</important> features!",
+        "level_9": "Mode can also be counted for <important>quantitative</important> features!",
         "level_10": ""
     },
     "PythonHint": {
