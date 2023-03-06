@@ -1,5 +1,6 @@
 using System;
 using Gameplay;
+using Localization;
 using Models;
 using TMPro;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Views
         [SerializeField] private TextMeshProUGUI slimeNameText;
         [SerializeField] private TextMeshProUGUI statSweetnessText;
         [SerializeField] private TextMeshProUGUI statSlipperinessText;
+        [SerializeField] private LocalizedText statTypeText;
 
         private SlimeData _slimeData;
 
@@ -34,10 +36,11 @@ namespace Views
         {
             if (!_slimeData) return;
             slimeNameText.text = _slimeData.SlimeName;
-            statSlipperinessText.text = String.Format(statSlipperinessText.text,
-                _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Slipperiness]);
-            statSweetnessText.text = String.Format(statSweetnessText.text,
-                _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness]);
+            statSlipperinessText.text = _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Slipperiness].ToString();
+            statSweetnessText.text = _slimeData.QuantitativeFeatures[SlimeQuantitativeFeatures.Sweetness].ToString();
+            statTypeText.LocalizationKey = "slime_type_" +
+                                           _slimeData.CategoricalFeatures[SlimeCategoricalFeatures.Type].ToString()
+                                               .ToLower();
         }
 
         private void HideSlimeView()
