@@ -15,7 +15,7 @@ namespace Models
         public QuantitativeFeatureCharacteristics quantitativeFeatureCharacteristic;
         public SlimeCategoricalFeatures slimeCategoricalFeature;
         public CategoricalFeatureCharacteristics categoricalFeatureCharacteristic;
-        public int value;
+        public float value;
         public List<SlimeData> aliveSlimes;
         public List<SlimeData> certainSlimes;
     }
