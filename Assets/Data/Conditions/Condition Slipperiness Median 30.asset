@@ -21,6 +21,6 @@ MonoBehaviour:
   quantitativeFeatureCharacteristic: 1
   slimeCategoricalFeature: 0
   categoricalFeatureCharacteristic: 0
-  value: 20
+  value: 32.5
   aliveSlimes: []
   certainSlimes: []

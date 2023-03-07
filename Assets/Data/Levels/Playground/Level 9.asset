@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7065ea5af2efc47ffb5e728d355240e8, type: 2}
   conditions:
   - {fileID: 11400000, guid: 88b6a7d77b54d4fbab10d6e82fd66d4e, type: 2}
+  - {fileID: 11400000, guid: 5df7a8884fead474db6aab4bec55f2b1, type: 2}
   interactionObjects:
   - {fileID: 2830383328213450121, guid: fb02e940cab12468ab220530d309690b, type: 3}
   - {fileID: 2830383328213450121, guid: 33cecc2294ef14093afbb101cb94b12c, type: 3}
