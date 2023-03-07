@@ -2964,6 +2964,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1794215507082448124, guid: d6b8d1fc3ea4d4b898e99b14630e91d8, type: 3}
+      propertyPath: ySpawnBorders.x
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 2519807573479379011, guid: d6b8d1fc3ea4d4b898e99b14630e91d8, type: 3}
       propertyPath: m_Name
       value: ArenaManager
