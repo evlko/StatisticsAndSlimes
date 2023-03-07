@@ -17,13 +17,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3962577855d1344cf9f4d18bce31d6d1, type: 2}
   - {fileID: 11400000, guid: 003af36072df34cdbb3a38fc2aef20a6, type: 2}
   - {fileID: 11400000, guid: 78e3aa9eb1d3649f2a276ade8204aa8a, type: 2}
-  - {fileID: 11400000, guid: 1eb978c5bf72545938865ad9d5c7aae9, type: 2}
-  initialStoredSlimes:
   - {fileID: 11400000, guid: 7d829196c8bef4ffa91ccc8df387da65, type: 2}
-  - {fileID: 11400000, guid: 7065ea5af2efc47ffb5e728d355240e8, type: 2}
+  - {fileID: 11400000, guid: 5e92e5f829f484a6bad0c84642e71048, type: 2}
+  initialStoredSlimes: []
   conditions:
   - {fileID: 11400000, guid: 88b6a7d77b54d4fbab10d6e82fd66d4e, type: 2}
-  - {fileID: 11400000, guid: 5df7a8884fead474db6aab4bec55f2b1, type: 2}
   interactionObjects:
   - {fileID: 2830383328213450121, guid: fb02e940cab12468ab220530d309690b, type: 3}
   - {fileID: 2830383328213450121, guid: 33cecc2294ef14093afbb101cb94b12c, type: 3}
